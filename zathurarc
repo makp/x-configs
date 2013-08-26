@@ -1,0 +1,35 @@
+# ~/.config/zathura/zathurarc
+
+set adjust-open width
+
+map n navigate next
+map t navigate previous
+
+map \< goto top
+map \> goto bottom
+
+map <C-.> feedkeys :
+# map <C-.> focus_inputbar
+
+map index <C-n> index_navigate next
+map index <C-t> index_navigate up
+
+map <C-g> abort
+
+map <C-f> scroll right
+map <C-b> scroll left
+
+# map <C-s> search next
+# map <C-r> search previous
+
+# set zoom-center "true"
+
+# map x feedkeys :blist<Tab>
+
+# map <C-s> search
+
+map <C-n> scroll down
+map <C-t> scroll up
+map <C-g> abort
+map <C-v> scroll half-down
+map <A-v> scroll half-up
