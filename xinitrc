@@ -25,7 +25,6 @@ setxkbmap dvorak &
 
 # Xmodmap
 xmodmap ~/.Xmodmap 
-xmodmap ~/.Xmodmap 		# My Xdomap file needs some rewriting
 
 # space2ctrl
 s2cctl start

@@ -101,10 +101,10 @@ bindsym $mod+Return floating toggle
 # floating_modifier Mod4
 
 # change focus between tiling / floating windows
-bindsym $mod+minus focus mode_toggle
+bindsym $mod+minus focus parent
 
 # focus the parent container
-bindsym $mod+c focus parent
+bindsym $mod+c focus mode_toggle
 
 force_focus_wrapping yes
 
