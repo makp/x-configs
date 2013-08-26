@@ -5,29 +5,12 @@ keysym Escape = Caps_Lock
 keysym Caps_Lock = Escape
 add Lock = Caps_Lock
 
-! clear modifiers
-! 
-! clear mod1 
-! clear Mod4
-
 clear control
 clear mod4
 
-! !
 keycode  37 = Super_L
-! keycode 105 = Alt_R Meta_R
 keycode 133 = Control_L
-! keycode 134 = Alt_R Meta_R
-! keycode 135 = Alt_R Meta_R
-! keycode 105 = Super_R
 
-
-! !
-! add mod1 = Alt_R Alt_L Meta_R Meta_L
-! add control = Control_R Control_L
 add mod4 = Super_L
 add control = Control_L Control_R
-! ! add mod4    = Super_R Super_L Menu 
-! add Control = Super_L Super_R
-! add Mod4 = Control_L Control_R
 
