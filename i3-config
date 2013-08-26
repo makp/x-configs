@@ -1,0 +1,276 @@
+# i3 config file (v4)  /home/makmiller/.i3/config
+
+# Maybe I could use mod+shift to workspace-related operations; and
+# mod+control for within-workspace operations
+
+exec --no-startup-id startconky.sh
+
+# exec emacsclient -c --eval '(set-frame-name "emacs_scratchpad")'
+# for_window [title="emacs_scratchpad"] move to scratchpad, border 2px
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below. ISO 10646 = Unicode
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font pango:DejaVu Sans Mono 10
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, if you need a lot of unicode glyphs or
+# right-to-left text rendering, you should instead use pango for rendering and
+# chose a FreeType font, such as:
+# font pango:DejaVu Sans Mono 10
+
+set $mod Mod4
+set $meta Mod1
+
+# use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# color defines for zenburn styled i3
+set $bg     #2c2c2e
+set $fg     #9f9f9f
+set $hi     #efef8f
+set $ac     #a0afa0
+set $tx     #040404
+set $ia     #8f8f8f
+set $be     #8faf9f
+set $yw     #ccdc90
+set $gn     #88b090
+set $rd     #e89393
+
+# set some nice colors      border     background  text
+client.focused              $ac        $ac         $tx
+client.unfocused            $bg        $bg         $ia
+client.focused_inactive     $bg        $bg         $ac
+client.urgent               $rd        $rd         $tx
+
+# start a terminal
+bindsym $mod+u exec i3-sensible-terminal
+
+# kill focused window
+bindsym $mod+Shift+c kill
+
+# start dmenu (a program launcher)
+bindsym $mod+p exec dmenu_run
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# change focus
+bindsym $mod+b focus left
+bindsym $mod+n focus down
+bindsym $mod+t focus up
+bindsym $mod+f focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Control+b move left 275px
+bindsym $mod+Control+n move down 150px
+bindsym $mod+Control+t move up 150px
+bindsym $mod+Control+f move right 275px
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Control+Left move left 
+bindsym $mod+Control+Down move down 
+bindsym $mod+Control+Up move up
+bindsym $mod+Control+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+d split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+space fullscreen
+
+popup_during_fullscreen smart
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+l layout tabbed
+bindsym $mod+z layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Return floating toggle
+
+# floating_modifier Mod4
+
+# change focus between tiling / floating windows
+bindsym $mod+minus focus mode_toggle
+
+# focus the parent container
+bindsym $mod+c focus parent
+
+force_focus_wrapping yes
+
+# focus the child container
+bindsym $mod+g focus child
+
+# Applications
+bindsym $mod+w exec conkeror
+bindsym $mod+Control+w [class="Conkeror"] scratchpad show
+
+bindsym $mod+Control+z [class="Zathura"] scratchpad show
+
+bindsym $mod+Control+m exec urxvt -name urxvt_scratchpad -e zsh -c 'tmux attach -d'
+for_window [instance="urxvt_scratchpad"] move to scratchpad, border none
+bindsym $mod+m [instance="urxvt_scratchpad"] scratchpad show
+
+bindsym $mod+v exec edit.sh
+bindsym $mod+Control+v [class="Emacs"] scratchpad show
+
+bindsym $mod+0 [instance="^(?!urxvt_scratchpad)" class="^(?!Emacs)(?!Zathura)(?!Conkeror)"] scratchpad show
+bindsym $mod+$meta+0 scratchpad show
+bindsym $mod+Shift+0 move container to scratchpad
+
+# bindsym --release $mod+period exec --no-startup-id pdf-up.sh
+# bindsym --release $mod+e      exec --no-startup-id pdf-down.sh
+
+# volume control
+bindsym XF86AudioLowerVolume exec "amixer sset Master 1- unmute && /home/makmiller/scripts/myscripts/volume.sh" 
+#(0            , 0x1008ff11)
+bindsym $mod+F2 exec "amixer sset Master 1- unmute && /home/makmiller/scripts/myscripts/volume.sh" 
+
+
+bindsym XF86AudioRaiseVolume exec "amixer sset Master 1+ unmute && /home/makmiller/scripts/myscripts/volume.sh"
+# (0            , 0x1008ff13)
+bindsym $mod+F3 exec "amixer sset Master 1+ unmute && /home/makmiller/scripts/myscripts/volume.sh"
+
+bindsym XF86AudioMute exec "amixer sset Master toggle"
+# (0            , 0x1008ff12)
+bindsym $mod+F1 exec "amixer sset Master toggle"
+
+# -- music tracks
+bindsym XF86AudioNext exec emacsclient --eval "(emms-next)"
+# (0            , 0x1008ff17)
+bindsym $mod+F8 exec emacsclient --eval "(emms-next)"
+
+
+bindsym XF86AudioPrev exec emacsclient --eval "(emms-previous)"
+# (0            , 0x1008ff16)
+bindsym $mod+F7 exec emacsclient --eval "(emms-previous)"
+
+
+bindsym XF86AudioPlay exec emacsclient --eval "(emms-pause)"
+# # (0            , 0x1008ff14)
+bindsym $mod+F5 exec emacsclient --eval "(emms-pause)"
+
+# bindsym XF86XK_AudioStop exec 
+# # (0            , 0x1008ff15)
+
+bindsym $mod+Shift+n move container to output right; focus output right
+bindsym $mod+Shift+t move container to output left; focus output left
+
+bindsym $mod+Shift+f move workspace to output right
+bindsym $mod+Shift+b move workspace to output left
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+
+# move focused container to workspace and follow it
+bindsym $mod+$meta+1 move container to workspace 1; workspace 1
+bindsym $mod+$meta+2 move container to workspace 2; workspace 2
+bindsym $mod+$meta+3 move container to workspace 3; workspace 3
+bindsym $mod+$meta+4 move container to workspace 4; workspace 4
+bindsym $mod+$meta+5 move container to workspace 5; workspace 5
+bindsym $mod+$meta+6 move container to workspace 6; workspace 6
+bindsym $mod+$meta+7 move container to workspace 7; workspace 7
+bindsym $mod+$meta+8 move container to workspace 8; workspace 8
+bindsym $mod+$meta+9 move container to workspace 9; workspace 9
+
+# swap screens
+# bindsym $mod+$meta+s mark sec; focus output right; mark prim; [con_mark="sec"] focus; move workspace to output right; [con_mark="prim"] focus; move workspace to output right; [con_mark="prim"] focus
+# move workspace to output right; focus output right; workspace prev_on_output; move workspace to output right
+bindsym $mod+Control+s exec /home/makmiller/.i3/switch.py
+bindsym $mod+$meta+s exec /home/makmiller/.i3/switch.py; focus output right
+
+bindsym $mod+r focus output right
+
+# automatic back-and-forth when switching to the current workspace
+workspace_auto_back_and_forth yes
+
+# reload the configuration file
+bindsym $mod+Control+r reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+bindsym $mod+$meta+b resize shrink width 100 px or 1 ppt
+bindsym $mod+$meta+n resize grow height 100 px or 1 ppt
+bindsym $mod+$meta+t resize shrink height 100 px or 1 ppt
+bindsym $mod+$meta+f resize grow width 100 px or 1 ppt
+
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym b           resize shrink width 10 px or 10 ppt
+        bindsym n           resize grow height 10 px or 10 ppt
+        bindsym t           resize shrink height 10 px or 10 ppt
+        bindsym f           resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink width 10 px or 10 ppt
+        bindsym Down        resize grow height 10 px or 10 ppt
+        bindsym Up          resize shrink height 10 px or 10 ppt
+        bindsym Right       resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+o mode "resize"
+
+bar {
+        status_command i3status --config ~/.i3/.i3status.conf
+#	tray_output primary 	#show tray icons on the primary monitor
+	i3bar_command i3bar
+	tray_output primary
+        font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+        font pango:DejaVu Sans Mono 10
+
+colors {
+        background          $bg
+        statusline          $fg
+        separator           $hi
+        focused_workspace   $gn        $bg        $ac
+        active_workspace    $gn        $ac        $tx
+        inactive_workspace  $bg        $bg        $ia
+        urgent_workspace    $rd        $bg        $ac
+    }
+}
+
+
+
+# Scratchpads
+# https://faq.i3wm.org/question/378/start-urxvt-in-a-scratchpad/
+# https://faq.i3wm.org/question/138/multiple-scratchpad/
