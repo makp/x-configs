@@ -19,7 +19,7 @@ set $meta Mod1
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# color defines for zenburn styled i3
+# color defines for zenburn styled i3 (from i3 FAQ)
 set $bg     #2c2c2e
 set $fg     #9f9f9f
 set $hi     #efef8f
@@ -74,10 +74,10 @@ bindsym $mod+Control+Up move up
 bindsym $mod+Control+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+$meta+h split h
 
 # split in vertical orientation
-bindsym $mod+d split v
+bindsym $mod+$meta+d split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+space fullscreen
@@ -148,7 +148,6 @@ bindsym XF86AudioPrev exec emacsclient --eval "(emms-previous)"
 # (0            , 0x1008ff16)
 bindsym $mod+F7 exec emacsclient --eval "(emms-previous)"
 
-
 bindsym XF86AudioPlay exec emacsclient --eval "(emms-pause)"
 # # (0            , 0x1008ff14)
 bindsym $mod+F5 exec emacsclient --eval "(emms-pause)"
@@ -205,6 +204,7 @@ bindsym $mod+r focus output right
 
 # automatic back-and-forth when switching to the current workspace
 workspace_auto_back_and_forth yes
+bindsym $mod+d workspace back_and_forth
 
 # reload the configuration file
 bindsym $mod+Control+r reload
