@@ -5,18 +5,13 @@
 
 exec --no-startup-id startconky.sh
 
-# exec emacsclient -c --eval '(set-frame-name "emacs_scratchpad")'
-# for_window [title="emacs_scratchpad"] move to scratchpad, border 2px
-
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 font pango:DejaVu Sans Mono 10
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, if you need a lot of unicode glyphs or
-# right-to-left text rendering, you should instead use pango for rendering and
-# chose a FreeType font, such as:
-# font pango:DejaVu Sans Mono 10
+# If you need a lot of unicode glyphs or right-to-left text rendering,
+# you should instead use pango for rendering and chose a FreeType
+# font, such as: font pango:DejaVu Sans Mono 10
 
 set $mod Mod4
 set $meta Mod1
@@ -48,12 +43,11 @@ bindsym $mod+u exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+c kill
 
-# start dmenu (a program launcher)
-bindsym $mod+p exec dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# start dmenu
+# i3-dmenu-desktop is a wrapper around dmenu which only displays applications
+# shipping a .desktop file.
+bindsym $mod+p exec --no-startup-id i3-dmenu-desktop
+# bindsym $mod+p exec dmenu_run
 
 # change focus
 bindsym $mod+b focus left
@@ -61,7 +55,7 @@ bindsym $mod+n focus down
 bindsym $mod+t focus up
 bindsym $mod+f focus right
 
-# alternatively, you can use the cursor keys:
+# alternatively, you can use the cursor keys
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
@@ -73,7 +67,7 @@ bindsym $mod+Control+n move down 150px
 bindsym $mod+Control+t move up 150px
 bindsym $mod+Control+f move right 275px
 
-# alternatively, you can use the cursor keys:
+# alternatively, you can use the arrow keys
 bindsym $mod+Control+Left move left 
 bindsym $mod+Control+Down move down 
 bindsym $mod+Control+Up move up
@@ -98,15 +92,14 @@ bindsym $mod+z layout toggle split
 # toggle tiling / floating
 bindsym $mod+Return floating toggle
 
-# floating_modifier Mod4
-
 # change focus between tiling / floating windows
 bindsym $mod+minus focus parent
 
 # focus the parent container
 bindsym $mod+c focus mode_toggle
 
-force_focus_wrapping yes
+# 
+force_focus_wrapping no
 
 # focus the child container
 bindsym $mod+g focus child
@@ -268,8 +261,6 @@ colors {
         urgent_workspace    $rd        $bg        $ac
     }
 }
-
-
 
 # Scratchpads
 # https://faq.i3wm.org/question/378/start-urxvt-in-a-scratchpad/
