@@ -106,8 +106,8 @@ force_focus_wrapping yes
 bindsym $mod+g focus child
 
 # Applications
-bindsym $mod+w exec conkeror
-bindsym $mod+Control+w [class="Conkeror"] scratchpad show
+bindsym $mod+Control+w exec conkeror
+bindsym $mod+w [class="Conkeror"] scratchpad show
 
 bindsym $mod+Control+z [class="Zathura"] scratchpad show
 
@@ -115,8 +115,8 @@ bindsym $mod+Control+m exec urxvt -name urxvt_scratchpad -e zsh -c 'tmux attach 
 for_window [instance="urxvt_scratchpad"] move to scratchpad, border none
 bindsym $mod+m [instance="urxvt_scratchpad"] scratchpad show
 
-bindsym $mod+v exec edit.sh
-bindsym $mod+Control+v [class="Emacs"] scratchpad show
+bindsym $mod+Control+v exec edit.sh
+bindsym $mod+v [class="Emacs"] scratchpad show
 
 bindsym $mod+0 [instance="^(?!urxvt_scratchpad)" class="^(?!Emacs)(?!Zathura)(?!Conkeror)"] scratchpad show
 bindsym $mod+$meta+0 scratchpad show
