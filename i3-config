@@ -54,7 +54,7 @@ bindsym $mod+b focus left
 bindsym $mod+n focus down
 bindsym $mod+t focus up
 bindsym $mod+f focus right
-# bindsym $mod+h focus right
+bindsym $mod+h focus output right
 
 # alternatively, you can use the cursor keys
 bindsym $mod+Left focus left
