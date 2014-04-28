@@ -1,3 +1,4 @@
+# -*-conf-*-
 initialZoom width
 continuousView yes
 bind ctrl-v any pageDown
