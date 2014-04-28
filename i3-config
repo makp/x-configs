@@ -1,5 +1,5 @@
+# -*-conf-*-
 # i3 config file (v4)  /home/makmiller/.i3/config
-
 # Maybe I could use mod+shift to workspace-related operations; and
 # mod+control for within-workspace operations
 
@@ -54,6 +54,7 @@ bindsym $mod+b focus left
 bindsym $mod+n focus down
 bindsym $mod+t focus up
 bindsym $mod+f focus right
+# bindsym $mod+h focus right
 
 # alternatively, you can use the cursor keys
 bindsym $mod+Left focus left
@@ -99,7 +100,7 @@ bindsym $mod+minus focus parent
 bindsym $mod+c focus mode_toggle
 
 # 
-force_focus_wrapping no
+force_focus_wrapping yes
 
 # focus the child container
 bindsym $mod+g focus child
