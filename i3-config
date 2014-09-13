@@ -63,10 +63,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Control+b move left 275px
+bindsym $mod+Control+b move left 150px
 bindsym $mod+Control+n move down 150px
 bindsym $mod+Control+t move up 150px
-bindsym $mod+Control+f move right 275px
+bindsym $mod+Control+f move right 150px
 
 # alternatively, you can use the arrow keys
 bindsym $mod+Control+Left move left 
@@ -200,8 +200,6 @@ bindsym $mod+$meta+9 move container to workspace 9; workspace 9
 # move workspace to output right; focus output right; workspace prev_on_output; move workspace to output right
 bindsym $mod+Control+s exec /home/makmiller/.i3/switch.py
 bindsym $mod+$meta+s exec /home/makmiller/.i3/switch.py; focus output right
-
-bindsym $mod+r focus output right
 
 # automatic back-and-forth when switching to the current workspace
 workspace_auto_back_and_forth yes
