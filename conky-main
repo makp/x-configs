@@ -151,8 +151,8 @@ ${color gray7}${font OpenLogos:size=32}  t B U z
 
    ${color7}${font StyleBats:size=18}P${font}  Work:  ${uptime_short} (Linux $kernel)
 
-   sincro out: ${font DejaVu Sans Book:size=8:bold}${execi 500 sed -n 1p /home/makmiller/myscripts/log-files/sincro-out.log}${font}
-   sincro in : ${font DejaVu Sans Book:size=8:bold}${execi 500 sed -n 1p /home/makmiller/myscripts/log-files/sincro-in.log}${font}${color white}
+   # sincro out: ${font DejaVu Sans Book:size=8:bold}${execi 500 sed -n 1p /home/makmiller/myscripts/log-files/sincro-out.log}${font}
+   # sincro in : ${font DejaVu Sans Book:size=8:bold}${execi 500 sed -n 1p /home/makmiller/myscripts/log-files/sincro-in.log}${font}${color white}
 
 
  ${color white}${font Radio Space:size=16}${time %A %d %Y}
