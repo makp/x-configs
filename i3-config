@@ -242,11 +242,34 @@ mode "resize" {
 
 bindsym $mod+o mode "resize"
 
+# Ultrabook
+
 bar {
-        status_command i3status --config ~/.i3/.i3status.conf
+	output eDP1
+        status_command i3status --config ~/config-files/general/x-configs/i3status-ultrabook.conf
 #	tray_output primary 	#show tray icons on the primary monitor
 	i3bar_command i3bar
-	tray_output primary
+        font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+        font pango:DejaVu Sans Mono 10
+
+colors {
+        background          $bg
+        statusline          $fg
+        separator           $hi
+        focused_workspace   $gn        $bg        $ac
+        active_workspace    $gn        $ac        $tx
+        inactive_workspace  $bg        $bg        $ia
+        urgent_workspace    $rd        $bg        $ac
+    }
+}
+
+
+# Home computer
+bar {
+	output HDMI
+        status_command i3status --config ~/config-files/general/x-configs/i3status.conf
+	tray_output primary 	#show tray icons on the primary monitor
+	i3bar_command i3bar
         font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
         font pango:DejaVu Sans Mono 10
 
