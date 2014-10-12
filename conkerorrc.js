@@ -117,6 +117,10 @@ define_key(hint_keymap, "C-h","hints-backspace");
 define_key(content_buffer_text_keymap, "M-h","cmd_deleteWordBackward");
 define_key(minibuffer_keymap, "M-h", "cmd_deleteWordBackward");
 
+// find-url
+define_key(content_buffer_normal_keymap, "h", "find-url");
+define_key(content_buffer_normal_keymap, "H", "find-url-new-buffer");
+
 // dvorak stuff 
 define_key(content_buffer_normal_keymap, "C-t","cmd_scrollLineUp"); 
 define_key(content_buffer_text_keymap, "C-t","backward-line"); 
@@ -157,7 +161,7 @@ register_user_stylesheet(
 // ==========
 // Completion
 // ==========
-url_completion_use_history = false; // that was taking too long
+url_completion_use_history = true; // that was taking too long
 url_completion_use_bookmarks = true;
 minibuffer_auto_complete_default = true;
 
@@ -186,7 +190,7 @@ define_key(content_buffer_normal_keymap, "P", "follow", $browser_object = browse
 require('page-modes/gmail.js'); 
 
 define_key(gmail_keymap, "G", null, $fallthrough); 
-define_key(gmail_keymap, "g", "find-url");
+define_key(gmail_keymap, "h", "find-url");
 
 define_key(gmail_keymap, "F", null, $fallthrough);
 define_key(gmail_keymap, "f", "follow");
@@ -279,7 +283,6 @@ mode_line_add_buttons(standard_mode_line_buttons, true);
 // --------------
 // shortcut gmail
 // --------------
-
 interactive("open-gmail", "Go to gmail", "follow",
             $browser_object = "http://gmail.com/");
 define_key(content_buffer_normal_keymap, "M-g", "open-gmail");
@@ -291,27 +294,21 @@ define_key(content_buffer_normal_keymap, "M-g", "open-gmail");
 // Selection searches
 // ------------------
 // selection searches
+
 // selection searches
 function create_selection_search(webjump, key) {
-    interactive(webjump+"-selection-search",
-                "Search " + webjump + " with selection contents",
-                "find-url-new-buffer",
-                $browser_object = function (I) {
-                    return webjump + " " + I.buffer.top_frame.getSelection();});
-    define_key(content_buffer_normal_keymap, key.toUpperCase(), webjump + "-selection-search");
-
     interactive("prompted-"+webjump+"-search", null,
-                function (I) {
+		function (I) {
                     var term = yield I.minibuffer.read_url($prompt = "Search "+webjump+":",
                                                            $initial_value = webjump+" ");
                     browser_object_follow(I.buffer, FOLLOW_DEFAULT, term);
                 });
     define_key(content_buffer_normal_keymap, key, "prompted-" + webjump + "-search");
 }
-// examples
-// create_selection_search("google","h");
+
+create_selection_search("google","g");
 // create_selection_search("wikipedia","w");
-// create_selection_search("dictionary","d");
+create_selection_search("dictionary","d");
 // create_selection_search("myspace","y");
 // create_selection_search("amazon","a");
 // create_selection_search("youtube","u");
