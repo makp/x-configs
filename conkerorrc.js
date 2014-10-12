@@ -129,7 +129,6 @@ define_key(minibuffer_keymap, "M-t","minibuffer-history-previous");
 define_key(hint_keymap, "C-t","hints-previous");
 define_key(content_buffer_normal_keymap, "C-.","execute-extended-command");
 
-
 // This binds the key 'w' in content buffers to the 'copy' command,
 // and will cause it to prompt for any DOM node, instead of just
 // links:
@@ -189,7 +188,7 @@ define_key(content_buffer_normal_keymap, "P", "follow", $browser_object = browse
 // ----------
 require('page-modes/gmail.js'); 
 
-define_key(gmail_keymap, "G", null, $fallthrough); 
+define_key(gmail_keymap, "G", null, $fallthrough);
 define_key(gmail_keymap, "h", "find-url");
 
 define_key(gmail_keymap, "F", null, $fallthrough);
@@ -297,13 +296,21 @@ define_key(content_buffer_normal_keymap, "M-g", "open-gmail");
 
 // selection searches
 function create_selection_search(webjump, key) {
+    // Regular webjumps
     interactive("prompted-"+webjump+"-search", null,
-		function (I) {
-                    var term = yield I.minibuffer.read_url($prompt = "Search "+webjump+":",
-                                                           $initial_value = webjump+" ");
-                    browser_object_follow(I.buffer, FOLLOW_DEFAULT, term);
-                });
+		alternates(follow, follow_new_buffer, follow_new_window),
+		$browser_object = function (I) {
+		    var term = I.minibuffer.read_url($prompt = "Search "+webjump+":", $initial_value = webjump+" ");
+                    return term;});
     define_key(content_buffer_normal_keymap, key, "prompted-" + webjump + "-search");
+
+    // webjump with selection (with upper case key)
+    interactive(webjump+"-selection-search",
+                "Search " + webjump + " with selection contents",
+                "find-url-new-buffer",
+                $browser_object = function (I) {
+                    return webjump + " " + I.buffer.top_frame.getSelection();});
+    define_key(content_buffer_normal_keymap, key.toUpperCase(), webjump + "-selection-search");
 }
 
 create_selection_search("google","g");
