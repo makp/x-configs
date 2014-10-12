@@ -453,8 +453,8 @@ external_content_handlers =
      image: { "*": "feh -F" }, 
      video: { "*": "mplayer" }, 
      audio: { "*": "mplayer" },
-     application: { pdf: "zathura",
-		    djvu: "zathura",
+     application: { pdf: "okular",
+		    djvu: "okular",
 		    postscript: "okular", 
 		    "x-dvi": "okular"}};
 
