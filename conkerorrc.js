@@ -91,7 +91,6 @@ require("mode-line.js");
 session_pref("xpinstall.whitelist.required", false);
 user_pref("extensions.checkCompatibility", false);
 
-
 // disable the security system so that I can install xpi files from
 // any site
 
@@ -277,17 +276,6 @@ mode_line_add_buttons(standard_mode_line_buttons, true);
 // Webjumps
 // ========
 
-// -------------------------
-// separate webjump for bmks
-// -------------------------
-define_webjump("bmk",
-               function(term) {return term;},
-               $completer = history_completer($use_history = false,
-                                              $use_bookmarks = true,
-                                              $match_required = true),
-               $description = "Visit a conkeror bookmark");
-
-
 // --------------
 // shortcut gmail
 // --------------
@@ -347,13 +335,13 @@ minibuffer_read_url_select_initial = false;
 // open multiple bookmarks
 // -----------------------
 
-interactive("open-all","opens bookmarks I visit frequently",
-            function(I){
-                load_url_in_current_buffer("https://login.ezproxy.lib.ucalgary.ca/login?qurl=http%3a%2f%2fwww.ncbi.nlm.nih.gov%2fsites%2fentrez%3fotool%3dicaucallib",I.window);
-                load_url_in_new_buffer("https://login.ezproxy.lib.ucalgary.ca/login?url=http://apps.webofknowledge.com/WOS_GeneralSearch_input.do?product=WOS&search_mode=GeneralSearch&SID=2DojgeDM7NBB4fhP9jH&preferencesSaved=",I.window);
-		load_url_in_new_buffer("https://login.ezproxy.lib.ucalgary.ca/login?url=http://scholar.google.ca/",I.window);
-            });
-define_key(content_buffer_normal_keymap, "f3", "open-all");
+// interactive("open-all","opens bookmarks I visit frequently",
+//             function(I){
+//                 load_url_in_current_buffer("https://login.ezproxy.lib.ucalgary.ca/login?qurl=http%3a%2f%2fwww.ncbi.nlm.nih.gov%2fsites%2fentrez%3fotool%3dicaucallib",I.window);
+//                 load_url_in_new_buffer("https://login.ezproxy.lib.ucalgary.ca/login?url=http://apps.webofknowledge.com/WOS_GeneralSearch_input.do?product=WOS&search_mode=GeneralSearch&SID=2DojgeDM7NBB4fhP9jH&preferencesSaved=",I.window);
+// 		load_url_in_new_buffer("https://login.ezproxy.lib.ucalgary.ca/login?url=http://scholar.google.ca/",I.window);
+//             });
+// define_key(content_buffer_normal_keymap, "f3", "open-all");
 
 // ----
 // News
@@ -385,7 +373,6 @@ define_webjump("youtube", "http://www.youtube.com/results?search_query=%s&search
 // Shopping
 // --------
 define_webjump("amazon", "http://www.amazon.com/exec/obidos/external-search/?field-keywords=%s&mode=blended");
-define_webjump("amazon-ca", "http://www.amazon.ca/exec/obidos/external-search/?field-keywords=%s&mode=blended");
 
 // ------
 // Images
@@ -512,27 +499,27 @@ session_pref('browser.history_expire_days', 10);
 session_pref("image.animation_mode", "none");
 
 
-define_browser_object_class(
-    "history-url", null, 
-    function (I, prompt) {
-        check_buffer (I.buffer, content_buffer);
-        var result = yield I.buffer.window.minibuffer.read_url(
-            $prompt = prompt,  $use_webjumps = false, $use_history = true, $use_bookmarks = false);
-        yield co_return (result);
-    });
+// define_browser_object_class(
+//     "history-url", null, 
+//     function (I, prompt) {
+//         check_buffer (I.buffer, content_buffer);
+//         var result = yield I.buffer.window.minibuffer.read_url(
+//             $prompt = prompt,  $use_webjumps = false, $use_history = true, $use_bookmarks = false);
+//         yield co_return (result);
+//     });
 
-interactive("find-url-from-history",
-            "Find a page from history in the current buffer",
-            "find-url",
-            $browser_object = browser_object_history_url);
+// interactive("find-url-from-history",
+//             "Find a page from history in the current buffer",
+//             "find-url",
+//             $browser_object = browser_object_history_url);
 
-interactive("find-url-from-history-new-buffer",
-            "Find a page from history in the current buffer",
-            "find-url-new-buffer",
-            $browser_object = browser_object_history_url);
+// interactive("find-url-from-history-new-buffer",
+//             "Find a page from history in the current buffer",
+//             "find-url-new-buffer",
+//             $browser_object = browser_object_history_url);
 
-define_key(content_buffer_normal_keymap, "H", "find-url-from-history-new-buffer");
-define_key(content_buffer_normal_keymap, "h", "find-url-from-history");
+// define_key(content_buffer_normal_keymap, "H", "find-url-from-history-new-buffer");
+// define_key(content_buffer_normal_keymap, "h", "find-url-from-history");
 
 
 add_hook("window_before_close_hook",
