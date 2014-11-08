@@ -286,8 +286,9 @@ colors {
 
 # Home computer
 bar {
-	output HDMI
-        status_command i3status --config ~/config-files/general/x-configs/i3status.conf
+	output HDMI-0
+	output LVDS
+        status_command i3status --config ~/config-files/general/x-configs/i3status-home-computer.conf
 	tray_output primary 	#show tray icons on the primary monitor
 	i3bar_command i3bar
         font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1

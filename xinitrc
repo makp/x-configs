@@ -39,6 +39,9 @@ xscreensaver -no-splash &
 # eval `cat ~/.fehbg`
 nitrogen --restore & 
 
+# Xmodmap again
+xmodmap ~/.Xmodmap
+
 # Multiple screens
 if [[ "$2" == "vga" ]] ; then
     xrandr --output LVDS --auto --primary
