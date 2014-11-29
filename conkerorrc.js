@@ -164,6 +164,8 @@ url_completion_use_history = true; // that was taking too long
 url_completion_use_bookmarks = true;
 minibuffer_auto_complete_default = true;
 
+session_pref('browser.history_expire_days', 180);
+
 // =====
 // Modes
 // =====
@@ -497,8 +499,6 @@ view_source_use_external_editor=true;
 
 define_key(content_buffer_text_keymap, "M-e","edit-current-field-in-external-editor");
 // default is C-i. By this key is binded to tab
-
-session_pref('browser.history_expire_days', 10);
 
 session_pref("image.animation_mode", "none");
 
