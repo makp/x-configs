@@ -17,9 +17,6 @@ syndaemon -t -k -i 2 -d &
 # -k: ignore modifier keys when monitoring keyboard activity
 # -d: starts as a daemon
 
-# dropbox daemon
-# dropboxd &
-
 # Dvorak keyboard
 setxkbmap dvorak &
 
@@ -54,10 +51,3 @@ fi
 
 ## windows manager ---------------
 exec $WM
-
-
-
-
-
-
-

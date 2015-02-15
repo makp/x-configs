@@ -305,6 +305,13 @@ colors {
     }
 }
 
+# Start a few applications
+exec insync start
+exec dropbox start
+exec urxvt -name urxvt_scratchpad -e zsh -c 'tmux attach -d'
+exec edit.sh
+exec conkeror
+
 # Scratchpads
 # https://faq.i3wm.org/question/378/start-urxvt-in-a-scratchpad/
 # https://faq.i3wm.org/question/138/multiple-scratchpad/
