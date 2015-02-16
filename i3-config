@@ -111,8 +111,9 @@ bindsym $mod+w [class="Conkeror"] scratchpad show
 
 bindsym $mod+Control+z [class="Zathura"] scratchpad show
 
-bindsym $mod+Control+m exec urxvt -name urxvt_scratchpad -e zsh -c 'tmux attach -d'
-for_window [instance="urxvt_scratchpad"] move to scratchpad, border none
+bindsym $mod+Control+m exec urxvt
+for_window [instance="urxvt_scratchpad"] floating enable, move to scratchpad, border none
+exec urxvt -name urxvt_scratchpad -g 78X14+600+20 -e zsh -c 'tmux attach -d'
 bindsym $mod+m [instance="urxvt_scratchpad"] scratchpad show
 
 bindsym $mod+Control+v exec edit.sh
@@ -306,11 +307,17 @@ colors {
 }
 
 # Start a few applications
+# daemons
 exec insync start
 exec dropbox start
-exec urxvt -name urxvt_scratchpad -e zsh -c 'tmux attach -d'
-exec edit.sh
+
+# emacs and conkeror
 exec conkeror
+
+for_window [title="emacs_scratchpad"] floating enable, move to scratchpad
+exec edit.sh --eval '(progn (set-frame-name "emacs_scratchpad") (setq default-frame-alist (quote ((width  . 80) (height . 20)))))'
+
+exec edit.sh
 
 # Scratchpads
 # https://faq.i3wm.org/question/378/start-urxvt-in-a-scratchpad/
