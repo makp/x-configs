@@ -317,9 +317,9 @@ function create_selection_search(webjump, key) {
 
 create_selection_search("google","g");
 // create_selection_search("wikipedia","w");
-create_selection_search("dictionary","d");
+create_selection_search("dict","d");
 // create_selection_search("myspace","y");
-// create_selection_search("amazon","a");
+create_selection_search("amazon","a");
 // create_selection_search("youtube","u");
 
 minibuffer_read_url_select_initial = false;
@@ -327,15 +327,6 @@ minibuffer_read_url_select_initial = false;
 
 
 // define_key(content_buffer_normal_keymap, ".", "teste");
-
-// create_selection_search("g","l");
-// create_selection_search("google","h");
-// create_selection_search("free-dic","o");
-// create_selection_search("wikipedia","a");
-
-// Description: pressing w will prompt you what to search on Wikipedia
-// (with autocomplete), or pressing W will automatically search what
-// you have currently selected.
 
 // -----------------------
 // open multiple bookmarks
@@ -359,7 +350,7 @@ define_webjump("news-guardian", "http://www.guardian.co.uk/search?q=%s", $altern
 // ------------
 // Dictionaries
 // ------------
-define_webjump("free-dic","http://www.thefreedictionary.com/%s");
+define_webjump("dict","http://www.thefreedictionary.com/%s");
 // define_webjump("sp-dic", "http://www.spanishdict.com/translate/%s");
 define_webjump("thesaurus","http://www.thefreedictionary.com/%s#Thesaurus");
 define_webjump("trans", "http://translate.google.com/translate_t#auto|en|%s");
