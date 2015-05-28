@@ -309,10 +309,9 @@ colors {
 # Start a few applications
 # daemons
 exec insync start
-exec dropbox start
 
 # emacs and conkeror
-exec conkeror
+# exec conkeror
 
 for_window [title="emacs_scratchpad"] floating enable, move to scratchpad, border 10px
 exec edit.sh --eval '(progn (set-frame-name "emacs_scratchpad") (setq default-frame-alist (quote ((width  . 80) (height . 20)))))'
