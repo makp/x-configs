@@ -105,6 +105,9 @@ require("global-overlay-keymap");
 define_key_alias("C-m", "return");
 define_key_alias("C-i", "tab");
 
+// C-tab for buffer-next
+define_key(content_buffer_normal_keymap, "C-tab","buffer-next");
+
 // escape as a stick key
 define_sticky_modifier("escape", "M");
 
