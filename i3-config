@@ -318,6 +318,10 @@ exec edit.sh --eval '(progn (set-frame-name "emacs_scratchpad") (setq default-fr
 
 exec edit.sh
 
+exec xautolock -time 15 -locker 'lock.sh'
+bindsym $mod+Shift+l exec "lock.sh"
+
+
 # Scratchpads
 # https://faq.i3wm.org/question/378/start-urxvt-in-a-scratchpad/
 # https://faq.i3wm.org/question/138/multiple-scratchpad/
