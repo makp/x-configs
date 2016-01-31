@@ -321,6 +321,7 @@ exec edit.sh
 exec xautolock -time 15 -locker 'lock.sh'
 bindsym $mod+Shift+l exec "lock.sh"
 
+for_window [class="Mathematica"] floating enable
 
 # Scratchpads
 # https://faq.i3wm.org/question/378/start-urxvt-in-a-scratchpad/
