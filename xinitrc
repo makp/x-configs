@@ -44,7 +44,7 @@ if [[ "$2" == "vga" ]] ; then
     xrandr --output LVDS --auto --primary
     xrandr --output VGA1 --auto --left-of LVDS
 elif [[ "$2" == "hdmi" ]]; then
-    xrandr --output LVDS --auto --output HDMI-0 --right-of LVDS --primary
+    xrandr --output LVDS --auto --output HDMI-0 --left-of LVDS --primary
 else
     echo "Only one screen"
 fi
