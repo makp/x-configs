@@ -109,6 +109,8 @@ bindsym $mod+g focus child
 bindsym $mod+Control+w exec conkeror
 bindsym $mod+w [class="Conkeror"] scratchpad show
 
+for_window [class="Mathematica"] floating enable
+
 bindsym $mod+Control+z [class="Zathura"] scratchpad show
 
 bindsym $mod+Control+m exec urxvt
@@ -321,7 +323,6 @@ exec edit.sh
 exec xautolock -time 15 -locker 'lock.sh'
 bindsym $mod+Shift+l exec "lock.sh"
 
-for_window [class="Mathematica"] floating enable
 
 # Scratchpads
 # https://faq.i3wm.org/question/378/start-urxvt-in-a-scratchpad/
