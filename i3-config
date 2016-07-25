@@ -309,20 +309,22 @@ colors {
 }
 
 # Start a few applications
-# daemons
-exec insync start
 
-# emacs and conkeror
-# exec conkeror
+# emacs
+exec i3-msg 'workspace 1; exec edit.sh'
 
 for_window [title="emacs_scratchpad"] floating enable, move to scratchpad, border 10px
 exec edit.sh --eval '(progn (set-frame-name "emacs_scratchpad") (setq default-frame-alist (quote ((width  . 80) (height . 20)))))'
 
-exec edit.sh
+# browser
+# exec google-chrome-stable
 
+# screen lock
 exec xautolock -time 15 -locker 'lock.sh'
 bindsym $mod+Shift+l exec "lock.sh"
 
+# daemons
+exec insync start
 
 # Scratchpads
 # https://faq.i3wm.org/question/378/start-urxvt-in-a-scratchpad/
