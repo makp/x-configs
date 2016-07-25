@@ -106,8 +106,8 @@ force_focus_wrapping yes
 bindsym $mod+g focus child
 
 # Applications
-bindsym $mod+Control+w exec conkeror
-bindsym $mod+w [class="Conkeror"] scratchpad show
+bindsym $mod+Control+w exec google-chrome-stable
+bindsym $mod+w [class="google-chrome"] scratchpad show
 
 for_window [class="Mathematica"] floating enable
 
@@ -121,7 +121,7 @@ bindsym $mod+m [instance="urxvt_scratchpad"] scratchpad show
 bindsym $mod+Control+v exec edit.sh
 bindsym $mod+v [class="Emacs"] scratchpad show
 
-bindsym $mod+0 [instance="^(?!urxvt_scratchpad)" class="^(?!Emacs)(?!Zathura)(?!Conkeror)"] scratchpad show
+bindsym $mod+0 [instance="^(?!urxvt_scratchpad)" class="^(?!Emacs)(?!Zathura)(?!google-chrome)"] scratchpad show
 bindsym $mod+$meta+0 scratchpad show
 bindsym $mod+Shift+0 move container to scratchpad
 
@@ -317,7 +317,7 @@ for_window [title="emacs_scratchpad"] floating enable, move to scratchpad, borde
 exec edit.sh --eval '(progn (set-frame-name "emacs_scratchpad") (setq default-frame-alist (quote ((width  . 80) (height . 20)))))'
 
 # browser
-# exec google-chrome-stable
+exec google-chrome-stable
 
 # screen lock
 exec xautolock -time 15 -locker 'lock.sh'
