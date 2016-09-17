@@ -249,7 +249,7 @@ bindsym $mod+o mode "resize"
 bar {
 	output eDP1
         status_command i3status --config ~/config-files/general/x-configs/i3status-ultrabook.conf
-#	tray_output primary 	#show tray icons on the primary monitor
+	tray_output primary 	#show tray icons on the primary monitor
 	i3bar_command i3bar
         font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
         font pango:DejaVu Sans Mono 10
