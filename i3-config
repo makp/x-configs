@@ -107,7 +107,7 @@ bindsym $mod+g focus child
 
 # Applications
 bindsym $mod+Control+w exec google-chrome-stable
-bindsym $mod+w [class="google-chrome"] scratchpad show
+bindsym $mod+w [class="Google-chrome"] scratchpad show
 
 for_window [class="Mathematica"] floating enable
 
@@ -121,7 +121,7 @@ bindsym $mod+m [instance="urxvt_scratchpad"] scratchpad show
 bindsym $mod+Control+v exec edit.sh
 bindsym $mod+v [class="Emacs"] scratchpad show
 
-bindsym $mod+0 [instance="^(?!urxvt_scratchpad)" class="^(?!Emacs)(?!Zathura)(?!google-chrome)"] scratchpad show
+bindsym $mod+0 [instance="^(?!urxvt_scratchpad)" class="^(?!Emacs)(?!Zathura)(?!Google-chrome)"] scratchpad show
 bindsym $mod+$meta+0 scratchpad show
 bindsym $mod+Shift+0 move container to scratchpad
 
