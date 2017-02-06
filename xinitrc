@@ -18,7 +18,7 @@ syndaemon -t -k -i 2 -d &
 # -d: starts as a daemon
 
 # Dvorak keyboard
-setxkbmap dvorak &
+setxkbmap dvorak
 
 # Xmodmap
 xmodmap ~/.Xmodmap 
