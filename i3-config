@@ -198,6 +198,9 @@ bindsym $mod+$meta+7 move container to workspace 7; workspace 7
 bindsym $mod+$meta+8 move container to workspace 8; workspace 8
 bindsym $mod+$meta+9 move container to workspace 9; workspace 9
 
+bindsym $mod+r workspace next_on_output
+bindsym $mod+Tab workspace next
+
 # swap screens
 # bindsym $mod+$meta+s mark sec; focus output right; mark prim; [con_mark="sec"] focus; move workspace to output right; [con_mark="prim"] focus; move workspace to output right; [con_mark="prim"] focus
 # move workspace to output right; focus output right; workspace prev_on_output; move workspace to output right
