@@ -43,10 +43,10 @@ xmodmap ~/.Xmodmap
 if [[ "$2" == "vga" ]] ; then
     xrandr --output LVDS --auto --primary
     xrandr --output VGA1 --auto --left-of LVDS
+# elif [[ "$2" == "hdmi" ]]; then
+#     xrandr --output LVDS --auto --output HDMI-0 --right-of LVDS #--primary
+#     xrandr --output LVDS --primary
 elif [[ "$2" == "hdmi" ]]; then
-    xrandr --output LVDS --auto --output HDMI-0 --right-of LVDS #--primary
-    xrandr --output LVDS --primary
-elif [[ "$2" == "hdmi2" ]]; then
     xrandr --output eDP1 --auto --output HDMI1 --right-of eDP1 #--primary
     xrandr --output eDP1 --primary
 else
