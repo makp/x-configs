@@ -111,7 +111,8 @@ bindsym $mod+w [class="Google-chrome"] scratchpad show
 
 for_window [class="Mathematica"] floating enable
 
-bindsym $mod+Control+z [class="Zathura"] scratchpad show
+bindsym $mod+Control+x exec zotero
+bindsym $mod+x [class="Zotero"] scratchpad show
 
 bindsym $mod+Control+m exec urxvt
 for_window [instance="urxvt_scratchpad"] floating enable, move to scratchpad, border none
