@@ -263,8 +263,8 @@ colors {
         background          $bg
         statusline          $fg
         separator           $hi
-        focused_workspace   $gn        $bg        $ac
-        active_workspace    $gn        $ac        $tx
+        focused_workspace   $gn        $ac        $tx
+        active_workspace    $gn        $bg        $ac
         inactive_workspace  $bg        $bg        $ia
         urgent_workspace    $rd        $bg        $ac
     }
@@ -284,34 +284,34 @@ colors {
         background          $bg
         statusline          $fg
         separator           $hi
-        focused_workspace   $gn        $bg        $ac
-        active_workspace    $gn        $ac        $tx
+        focused_workspace   $gn        $ac        $tx
+        active_workspace    $gn        $bg        $ac
         inactive_workspace  $bg        $bg        $ia
         urgent_workspace    $rd        $bg        $ac
     }
 }
 
 
-# Home computer
-bar {
-	output HDMI-0
-	output LVDS
-        status_command i3status --config ~/config-files/general/x-configs/i3status-home-computer.conf
-	tray_output primary 	#show tray icons on the primary monitor
-	i3bar_command i3bar
-        font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-        font pango:DejaVu Sans Mono 10
+# # Home computer
+# bar {
+# 	output HDMI-0
+# 	output LVDS
+#         status_command i3status --config ~/config-files/general/x-configs/i3status-home-computer.conf
+# 	tray_output primary 	#show tray icons on the primary monitor
+# 	i3bar_command i3bar
+#         font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+#         font pango:DejaVu Sans Mono 10
 
-colors {
-        background          $bg
-        statusline          $fg
-        separator           $hi
-        focused_workspace   $gn        $bg        $ac
-        active_workspace    $gn        $ac        $tx
-        inactive_workspace  $bg        $bg        $ia
-        urgent_workspace    $rd        $bg        $ac
-    }
-}
+# colors {
+#         background          $bg
+#         statusline          $fg
+#         separator           $hi
+#         focused_workspace   $gn        $bg        $ac
+#         active_workspace    $gn        $ac        $tx
+#         inactive_workspace  $bg        $bg        $ia
+#         urgent_workspace    $rd        $bg        $ac
+#     }
+# }
 
 # Start a few applications
 
