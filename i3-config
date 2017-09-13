@@ -130,35 +130,35 @@ bindsym $mod+Shift+0 move container to scratchpad
 # bindsym --release $mod+e      exec --no-startup-id pdf-down.sh
 
 # volume control
-bindsym XF86AudioLowerVolume exec "amixer sset Master 1- unmute && /home/makmiller/scripts/myscripts/volume.sh" 
+bindsym XF86AudioLowerVolume exec "amixer sset Master 1%- unmute && /home/makmiller/scripts/myscripts/volume.sh" 
 #(0            , 0x1008ff11)
-bindsym $mod+F2 exec "amixer sset Master 1- unmute && /home/makmiller/scripts/myscripts/volume.sh" 
+bindsym $mod+F2 exec "amixer sset Master 1%- unmute && /home/makmiller/scripts/myscripts/volume.sh" 
 
 
-bindsym XF86AudioRaiseVolume exec "amixer sset Master 1+ unmute && /home/makmiller/scripts/myscripts/volume.sh"
+bindsym XF86AudioRaiseVolume exec "amixer sset Master 1%+ unmute && /home/makmiller/scripts/myscripts/volume.sh"
 # (0            , 0x1008ff13)
-bindsym $mod+F3 exec "amixer sset Master 1+ unmute && /home/makmiller/scripts/myscripts/volume.sh"
+bindsym $mod+F3 exec "amixer sset Master 1%+ unmute && /home/makmiller/scripts/myscripts/volume.sh"
 
 bindsym XF86AudioMute exec "amixer sset Master toggle"
 # (0            , 0x1008ff12)
 bindsym $mod+F1 exec "amixer sset Master toggle"
 
-# -- music tracks
-bindsym XF86AudioNext exec emacsclient --eval "(emms-next)"
-# (0            , 0x1008ff17)
-bindsym $mod+F8 exec emacsclient --eval "(emms-next)"
+# # -- music tracks
+# bindsym XF86AudioNext exec emacsclient --eval "(emms-next)"
+# # (0            , 0x1008ff17)
+# bindsym $mod+F8 exec emacsclient --eval "(emms-next)"
 
 
-bindsym XF86AudioPrev exec emacsclient --eval "(emms-previous)"
-# (0            , 0x1008ff16)
-bindsym $mod+F7 exec emacsclient --eval "(emms-previous)"
+# bindsym XF86AudioPrev exec emacsclient --eval "(emms-previous)"
+# # (0            , 0x1008ff16)
+# bindsym $mod+F7 exec emacsclient --eval "(emms-previous)"
 
-bindsym XF86AudioPlay exec emacsclient --eval "(emms-pause)"
-# # (0            , 0x1008ff14)
-bindsym $mod+F5 exec emacsclient --eval "(emms-pause)"
+# bindsym XF86AudioPlay exec emacsclient --eval "(emms-pause)"
+# # # (0            , 0x1008ff14)
+# bindsym $mod+F5 exec emacsclient --eval "(emms-pause)"
 
-# bindsym XF86XK_AudioStop exec 
-# # (0            , 0x1008ff15)
+# # bindsym XF86XK_AudioStop exec 
+# # # (0            , 0x1008ff15)
 
 bindsym $mod+Shift+n move container to output right; focus output right
 bindsym $mod+Shift+t move container to output left; focus output left
