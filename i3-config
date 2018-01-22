@@ -105,6 +105,13 @@ force_focus_wrapping yes
 # focus the child container
 bindsym $mod+g focus child
 
+# move to next workspace
+bindsym $mod+Tab workspace next
+bindsym $mod+r workspace next_on_output
+
+# rename workspace
+bindsym $mod+Shift+r exec i3-input -F 'rename workspace to "%s"' -P 'Novo nome: '
+
 # Applications
 bindsym $mod+Control+w exec google-chrome-stable
 bindsym $mod+w [class="Google-chrome"] scratchpad show
@@ -199,8 +206,6 @@ bindsym $mod+$meta+7 move container to workspace 7
 bindsym $mod+$meta+8 move container to workspace 8
 bindsym $mod+$meta+9 move container to workspace 9
 
-bindsym $mod+r workspace next_on_output
-bindsym $mod+Tab workspace next
 
 # swap screens
 # bindsym $mod+$meta+s mark sec; focus output right; mark prim; [con_mark="sec"] focus; move workspace to output right; [con_mark="prim"] focus; move workspace to output right; [con_mark="prim"] focus
@@ -215,9 +220,9 @@ bindsym $mod+d workspace back_and_forth
 # reload the configuration file
 bindsym $mod+Control+r reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+meta+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Ta afim de sair?.' -b 'Sim' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 bindsym $mod+$meta+b resize shrink width 100 px or 1 ppt
