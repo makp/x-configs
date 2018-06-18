@@ -136,11 +136,12 @@ ${color gray7}${font OpenLogos:size=32}  t B U z
 
    ${color2}${font StyleBats:size=16}A${font} Load: ${loadavg}   (${hwmon 0 temp 1} C) 
    ${cpugraph 20 000000 ffffff}
-   Core 0: ${cpu cpu0}% ${cpubar cpu0} 
-   Core 1: ${cpu cpu1}% ${cpubar cpu1}
-
-   freq (MHz): ${freq 1} (core 0)  ${freq 2} (core 1)
-   governor: ${execi 300 head /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor}  
+   Core 0: ${cpu cpu0}% ${cpubar cpu0 8,115} ${freq 1}MHz
+   Core 1: ${cpu cpu1}% ${cpubar cpu1 8,115} ${freq 2}MHz
+   Core 2: ${cpu cpu2}% ${cpubar cpu2 8,115} ${freq 3}MHz
+   Core 3: ${cpu cpu3}% ${cpubar cpu3 8,115} ${freq 4}MHz
+   # freq (MHz): ${freq 1} (core 0)  ${freq 2} (core 1) ${freq 3} (core 2) ${freq 4} (core 3)
+   Governor: ${execi 300 head /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor}  
   
    RAM: $mem / $memmax     
    ${membar 6}
