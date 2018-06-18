@@ -108,7 +108,7 @@ ${color gray7}${font OpenLogos:size=32}  t B U z
    ${downspeedgraph eth0 20 darkred white}   
    ${font PizzaDude Bullets:size=16}S${font} Down: ${downspeed eth0} Kb/s 
    ${upspeedgraph eth0 20 000000 ffffff}
-   wi-fi signal: ${wireless_link_qual_perc eth0} % ${wireless_link_bar eth0} 	
+   wi-fi signal: ${wireless_link_qual_perc wlp2s0} % ${wireless_link_bar wlp2s0} 	
   
   ${color3}${font PizzaDude Bullets:size=16}J${font}  Processes: $running_processes / $processes
      ${hr 2}
