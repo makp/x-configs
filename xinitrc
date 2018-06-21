@@ -30,7 +30,7 @@ s2cctl start
 numlockx
 
 # Xscreensaver
-xscreensaver -no-splash &
+# xscreensaver -no-splash &
 
 # Wall paper
 # eval `cat ~/.fehbg`
