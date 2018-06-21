@@ -220,7 +220,7 @@ bindsym $mod+d workspace back_and_forth
 # reload the configuration file
 bindsym $mod+Control+r reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+meta+r restart
+bindsym $mod+$meta+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Ta afim de sair?.' -b 'Sim' 'i3-msg exit'"
 
