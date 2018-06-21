@@ -328,7 +328,7 @@ for_window [title="emacs_scratchpad"] floating enable, move to scratchpad, borde
 exec edit.sh --eval '(progn (set-frame-name "emacs_scratchpad") (setq default-frame-alist (quote ((width  . 80) (height . 20)))))'
 
 # screen lock
-exec xautolock -time 15 -locker 'lock.sh'
+exec xautolock -detectsleep -time 15 -locker 'lock.sh'
 bindsym $mod+Shift+l exec "lock.sh"
 
 # daemons
