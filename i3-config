@@ -276,6 +276,28 @@ colors {
     }
 }
 
+# turing
+bar {
+	output DP-4
+	# output HDMI1
+        status_command i3status --config ~/config-files/general/x-configs/i3status-turing
+	tray_output primary 	#show tray icons on the primary monitor
+	i3bar_command i3bar
+        font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+        font pango:DejaVu Sans Mono 10
+
+colors {
+        background          $bg
+        statusline          $fg
+        separator           $hi
+        focused_workspace   $gn        $ac        $tx
+        active_workspace    $gn        $bg        $ac
+        inactive_workspace  $bg        $bg        $ia
+        urgent_workspace    $rd        $bg        $ac
+    }
+}
+
+
 
 # Office computer
 bar {
