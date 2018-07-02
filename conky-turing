@@ -125,14 +125,14 @@ ${color gray7}${font OpenLogos:size=32}  t B U z
      ${top name 3}${top cpu 3}
      ${hr 2}
 
-   /home/:   ${fs_free /home/} / ${fs_size /home/}
-   ${fs_bar /home/}
-   /usr/:    ${fs_free /usr/} / ${fs_size /usr/}
-   ${fs_bar /usr/}
-   /var/:    ${fs_free /var/} / ${fs_size /var/}
-   ${fs_bar /var/}
-   /tmp/:    ${fs_free /tmp/} / ${fs_size /tmp/}
-   ${fs_bar /tmp/}
+   # /home/:   ${fs_free /home/} / ${fs_size /home/}
+   # ${fs_bar /home/}
+   # /usr/:    ${fs_free /usr/} / ${fs_size /usr/}
+   # ${fs_bar /usr/}
+   # /var/:    ${fs_free /var/} / ${fs_size /var/}
+   # ${fs_bar /var/}
+   # /tmp/:    ${fs_free /tmp/} / ${fs_size /tmp/}
+   # ${fs_bar /tmp/}
 
    ${color2}${font StyleBats:size=16}A${font} Load: ${loadavg}   (${hwmon 0 temp 1} C)
    ${cpugraph 20 000000 ffffff}
