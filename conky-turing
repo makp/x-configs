@@ -37,128 +37,66 @@ maximum_width 300 # pixels
 default_color BADCDD
 color1 gray23 # #   # net
 color3 698b22 # ram
-color2 darkgreen  # cpu
+color2 365411  # cpu
 color4 darkorange4
-color5 F8DF58 # e-mail
+color5 9F9F1A			# yellowish
 color6 dodgerblue4# weather
+# 3b6113
+
 color7 yellow # system management
 #
 
-#lua_load /home/makmiller/.conkyrcs/cpufreq.lua # function for printing the governor
-
-# Possible variables to be used:
-#
-#      Variable         Arguments                  Description
-#  acpiacadapter                     ACPI ac adapter state.
-#  acpifan                           ACPI fan state
-#  acpitemp                          ACPI temperature.
-#  adt746xcpu                        CPU temperature from therm_adt746x
-#  adt746xfan                        Fan speed from therm_adt746x
-#  battery           (num)           Remaining capasity in ACPI or APM
-#                                    battery. ACPI battery number can be
-#                                    given as argument (default is BAT0).
-#  buffers                           Amount of memory buffered
-#  cached                            Amount of memory cached
-#  color             (color)         Change drawing color to color
-#  cpu                               CPU usage in percents
-#  cpubar            (height)        Bar that shows CPU usage, height is
-#                                    bar's height in pixels
-#  downspeed         net             Download speed in kilobytes
-#  downspeedf        net             Download speed in kilobytes with one
-#                                    decimal
-#  exec              shell command   Executes a shell command and displays
-#                                    the output in torsmo. warning: this
-#                                    takes a lot more resources than other
-#                                    variables. I'd recommend coding wanted
-#                                    behaviour in C and posting a patch :-).
-#  execi             interval, shell Same as exec but with specific interval.
-#                    command         Interval can't be less than
-#                                    update_interval in configuration.
-#  fs_bar            (height), (fs)  Bar that shows how much space is used on
-#                                    a file system. height is the height in
-#                                    pixels. fs is any file on that file
-#                                    system.
-#  fs_free           (fs)            Free space on a file system available
-#                                    for users.
-#  fs_free_perc      (fs)            Free percentage of space on a file
-#                                    system available for users.
-#  fs_size           (fs)            File system size
-#  fs_used           (fs)            File system used space
-#  hr                (height)        Horizontal line, height is the height in
-#                                    pixels
-#  i2c               (dev), type, n  I2C sensor from sysfs (Linux 2.6). dev
-#                                    may be omitted if you have only one I2C
-#                                    device. type is either in (or vol)
-#                                    meaning voltage, fan meaning fan or temp
-#                                    meaning temperature. n is number of the
-#                                    sensor. See /sys/bus/i2c/devices/ on
-#                                    your local computer.
-#  kernel                            Kernel version
-#  loadavg           (1), (2), (3)   System load average, 1 is for past 1
-#                                    minute, 2 for past 5 minutes and 3 for
-#                                    past 15 minutes.
-#  machine                           Machine, i686 for example
-#  mails                             Mail count in mail spool. You can use
-#
-#  white blue green
-
 TEXT
-${color gray7}${font OpenLogos:size=32}  t B U z
- ${color1}${font PizzaDude Bullets:size=16}M${font} Up: ${upspeed eth0}${color1} Kb/s
+${color gray7}${font OpenLogos:size=28}    t  B  U  z
+ ${color1}${font PizzaDude Bullets:size=16}M${font} Up: ${upspeed wlp8s0}${color1} Kb/s
    ${downspeedgraph wlp8s0 20 darkred white}
    ${font PizzaDude Bullets:size=16}S${font} Down: ${downspeed wlp8s0} Kb/s
    ${upspeedgraph wlp8s0 20 000000 ffffff}
    wi-fi signal: ${wireless_link_qual_perc wlp8s0} % ${wireless_link_bar wlp8s0}
 
-  ${color3}${font PizzaDude Bullets:size=16}J${font}  Processes: $running_processes / $processes
+   ${color 293d3d}${font StyleBats:size=16}l${font} Load: ${loadavg}
+    ${loadgraph 20 000000 ffffff yellow -t}
+
+   ${color2}${font PizzaDude Bullets:size=16}J${font} Processes: $running_processes / $processes
      ${hr 2}
      HIGHEST MEM:
      ${color darkred}${top_mem name 1}${top_mem mem 1}
-     ${color3}${top_mem name 2}${top_mem mem 2}
+     ${color2}${top_mem name 2}${top_mem mem 2}
      ${top_mem name 3}${top_mem mem 3}
      ${hr 2}
 
      ${hr 2}
      HIGHEST CPU:
      ${color darkred}${top name 1}${top cpu 1}
-     ${color3}${top name 2}${top cpu 2}
+     ${color2}${top name 2}${top cpu 2}
      ${top name 3}${top cpu 3}
      ${hr 2}
+     # freq (MHz): ${freq 1} (core 0)  ${freq 2} (core 1) ${freq 3} (core 2) ${freq 4} (core 3)
 
-   # /home/:   ${fs_free /home/} / ${fs_size /home/}
-   # ${fs_bar /home/}
-   # /usr/:    ${fs_free /usr/} / ${fs_size /usr/}
-   # ${fs_bar /usr/}
-   # /var/:    ${fs_free /var/} / ${fs_size /var/}
-   # ${fs_bar /var/}
-   # /tmp/:    ${fs_free /tmp/} / ${fs_size /tmp/}
-   # ${fs_bar /tmp/}
+   # ${color yellow3}${font StyleBats:size=16}
+ ${color 10470e}${font StyleBats:size=16}A${font} CPU: ${hwmon 0 temp 1} C; Gov.: ${execi 5 head /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor}
+    ${cpugraph 20 000000 ffffff}
+     Core 0: ${cpubar cpu0 7,145} ${freq 1}MHz ${cpu cpu0}%
+     Core 1: ${cpubar cpu1 7,145} ${freq 2}MHz ${cpu cpu1}%
+     Core 2: ${cpubar cpu2 7,145} ${freq 3}MHz ${cpu cpu2}%
+     Core 3: ${cpubar cpu3 7,145} ${freq 4}MHz ${cpu cpu3}%
+     Core 4: ${cpubar cpu4 7,145} ${freq 5}MHz ${cpu cpu4}%
+     Core 5: ${cpubar cpu5 7,145} ${freq 6}MHz ${cpu cpu5}%
+     Core 6: ${cpubar cpu6 7,145} ${freq 7}MHz ${cpu cpu6}%
+     
+    ${color 234010}${font StyleBats:size=14}C${font} GPU: ${nvidia modelname}
+     ${nvidiabar 7,245 gpuutil} ${nvidia gpuutil}%
+    Temp: ${nvidia gputemp}/${nvidia gputempthreshold} C Refresh Rate: ${execi 5 xrandr | grep -A1 DP-4 | grep -o "[[:digit:]]\+.[[:digit:]]\+\*" | grep -o "[[:digit:]]\+.[[:digit:]]\+"}Hz
 
-   ${color2}${font StyleBats:size=16}A${font} Load: ${loadavg}   (${hwmon 0 temp 1} C)
-   ${cpugraph 20 000000 ffffff}
-   Core 0: ${cpubar cpu0 8,145} ${freq 1}MHz ${cpu cpu0}%
-   Core 1: ${cpubar cpu1 8,145} ${freq 2}MHz ${cpu cpu1}%
-   Core 2: ${cpubar cpu2 8,145} ${freq 3}MHz ${cpu cpu2}%
-   Core 3: ${cpubar cpu3 8,145} ${freq 4}MHz ${cpu cpu3}%
-   Core 4: ${cpubar cpu4 8,145} ${freq 1}MHz ${cpu cpu4}%
-   Core 5: ${cpubar cpu5 8,145} ${freq 2}MHz ${cpu cpu5}%
-   Core 6: ${cpubar cpu6 8,145} ${freq 3}MHz ${cpu cpu6}%
+    ${color5}${font StyleBats:size=18}m${font} Memory & SSD
+     RAM: $mem / $memmax
+     ${membar 6}
+     Swap: $swap/$swapmax
+     ${swapbar 6}
+     SSD: ${fs_free /} / ${fs_size /}
+     ${fs_bar /}
 
-   # freq (MHz): ${freq 1} (core 0)  ${freq 2} (core 1) ${freq 3} (core 2) ${freq 4} (core 3)
-   Governor: ${execi 300 head /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor}
-
-   RAM: $mem / $memmax
-   ${membar 6}
-   Swap: $swap/$swapmax
-   ${swapbar 6}
-
-   # ${color yellow3}${font StyleBats:size=16}8${font}  Battery: ${battery_percent}% ${battery_bar}
-
-   ${color7}${font StyleBats:size=18}P${font}  Work:  ${uptime_short} (Linux $kernel)
-
-   # sincro out: ${font DejaVu Sans Book:size=8:bold}${execi 500 sed -n 1p /home/makmiller/myscripts/log-files/sincro-out.log}${font}
-   # sincro in : ${font DejaVu Sans Book:size=8:bold}${execi 500 sed -n 1p /home/makmiller/myscripts/log-files/sincro-in.log}${font}${color white}
-
-
- ${color white}${font Radio Space:size=16}${time %A %d %Y}
-   ${font Radio Space:size=55}${time %H:%M}
+   ${color7}${font StyleBats:size=18}o${font} Uptime: ${uptime_short} (Linux $kernel)
+       
+     ${color white}${font Radio Space:size=16}${time %A %d %Y}
+             ${font Radio Space:size=40}${time %H:%M}
