@@ -88,6 +88,7 @@ ${color gray7}${font OpenLogos:size=28}   t  B  U  z
      ${nvidiabar 7,245 gpuutil} ${nvidia gpuutil}%
     Temp: ${nvidia gputemp}/${nvidia gputempthreshold} C Refresh Rate: ${execi 5 xrandr | grep -A1 DP-4 | grep -o "[[:digit:]]\+.[[:digit:]]\+\*" | grep -o "[[:digit:]]\+.[[:digit:]]\+"}Hz
 
+
     ${color5}${font StyleBats:size=18}m${font} Memory & SSD
      RAM: $mem / $memmax
      ${membar 6}
