@@ -49,6 +49,9 @@ if [[ "$2" == "vga" ]] ; then
 elif [[ "$2" == "hdmi" ]]; then
     xrandr --output eDP1 --auto --output HDMI1 --right-of eDP1 #--primary
     xrandr --output eDP1 --primary
+elif [[ "$2" == "turing" ]]; then
+    xrandr --output HDMI-0 --auto --output DP-4 --left-of HDMI-0
+    xrandr --output HDMI-0 --primary
 else
     echo "Only one screen"
 fi
