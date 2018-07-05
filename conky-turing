@@ -9,7 +9,7 @@ own_window yes
 
 # font
 use_xft yes
-xftfont DejaVu Sans Book:size=8
+xftfont DejaVu Sans Book:size=7
 
 # windows settings
 own_window_type override
@@ -47,7 +47,7 @@ color7 yellow # system management
 #
 
 TEXT
-${color gray7}${font OpenLogos:size=28}    t  B  U  z
+${color gray7}${font OpenLogos:size=28}   t  B  U  z
  ${color1}${font PizzaDude Bullets:size=16}M${font} Up: ${upspeed wlp8s0}${color1} Kb/s
    ${downspeedgraph wlp8s0 20 darkred white}
    ${font PizzaDude Bullets:size=16}S${font} Down: ${downspeed wlp8s0} Kb/s
