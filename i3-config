@@ -344,7 +344,7 @@ colors {
 # Start a few applications
 
 # emacs
-exec i3-msg 'focus output left; exec edit.sh'
+# exec i3-msg 'focus output left; exec edit.sh'
 
 for_window [title="emacs_scratchpad"] floating enable, move to scratchpad, border 10px
 exec edit.sh --eval '(progn (set-frame-name "emacs_scratchpad") (setq default-frame-alist (quote ((width  . 80) (height . 20)))))'
