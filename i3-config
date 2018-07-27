@@ -343,15 +343,19 @@ colors {
 
 # Start a few applications
 
-# emacs
-# exec i3-msg 'focus output left; exec edit.sh'
+# Google chrome
+exec google-chrome-stable
 
+
+# Emacs
 for_window [title="emacs_scratchpad"] floating enable, move to scratchpad, border 10px
-exec edit.sh --eval '(progn (set-frame-name "emacs_scratchpad") (setq default-frame-alist (quote ((width  . 80) (height . 20)))))'
+exec edit.sh --eval '(progn (set-frame-name "emacs_scratchpad") (setq default-frame-alist (quote ((width  . 120) (height . 20)))))'
+
 
 # screen lock
 exec xautolock -detectsleep -time 15 -locker 'lock.sh'
 bindsym $mod+Shift+l exec "lock.sh"
+
 
 # daemons
 exec insync start
