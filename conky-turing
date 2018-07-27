@@ -48,10 +48,10 @@ color7 yellow # system management
 
 TEXT
 ${color gray7}${font OpenLogos:size=28}   t  B  U  z
- ${color1}${font PizzaDude Bullets:size=16}M${font} Up: ${upspeed wlp8s0}${color1} Kb/s
-   ${downspeedgraph wlp8s0 20 darkred white}
-   ${font PizzaDude Bullets:size=16}S${font} Down: ${downspeed wlp8s0} Kb/s
+ ${color1}${font PizzaDude Bullets:size=16}M${font} Up: ${upspeed wlp8s0}${color1}
    ${upspeedgraph wlp8s0 20 000000 ffffff}
+   ${font PizzaDude Bullets:size=16}S${font} Down: ${downspeed wlp8s0}
+   ${downspeedgraph wlp8s0 20 darkred white}
    wi-fi signal: ${wireless_link_qual_perc wlp8s0} % ${wireless_link_bar wlp8s0}
 
    ${color 293d3d}${font StyleBats:size=16}l${font} Load: ${loadavg}
