@@ -4,6 +4,11 @@
 # Helpful applications:
 # xprop: identify class and instance of a window
 
+# TODO list:
+# + Fix xautolock behavior. Resource:
+#   https://unix.stackexchange.com/questions/144843/get-xautolock-status
+
+#######################################################
 
 # Font for window titles. This font will also be used by the bar
 # unless a different font is used in the bar {} block below.
@@ -76,7 +81,7 @@ bindsym $mod+$meta+h split h
 bindsym $mod+$meta+d split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+space fullscreen; exec xautolock -toggle
+bindsym $mod+space exec --no-startup-id xautolock -toggle; fullscreen
 # bindsym $mod+$meta+space fullscreen; exec xdotool mousemove --sync 1920 0
 
 popup_during_fullscreen smart
