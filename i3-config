@@ -260,10 +260,10 @@ mode "resize" {
 
 bindsym $mod+o mode "resize"
 
-# Ultrabook
+# leibniz machine
 bar {
 	output eDP1
-	output HDMI1
+	# output HDMI1
         status_command i3status --config ~/config-files/general/x-configs/i3status-ultrabook.conf
 	tray_output primary 	#show tray icons on the primary monitor
 	i3bar_command i3bar
@@ -281,10 +281,10 @@ colors {
     }
 }
 
-# turing
+# turing machine
 bar {
 	# output DP-4
-	# output HDMI-0
+	output HDMI-0
         status_command i3status --config ~/config-files/general/x-configs/i3status-turing
 	tray_output primary
 	i3bar_command i3bar
