@@ -47,7 +47,7 @@ bindsym $mod+Shift+c kill
 # dmenu
 # i3-dmenu-desktop is a wrapper around dmenu which only displays applications
 # shipping a .desktop file.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d focus right
 
 # change focus
 bindsym $mod+b focus left
