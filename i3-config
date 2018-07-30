@@ -179,6 +179,16 @@ bindsym $mod+Shift+t move container to output left; focus output left
 bindsym $mod+Shift+f move workspace to output right
 bindsym $mod+Shift+b move workspace to output left
 
+
+# poor man's version of swap
+bindsym $mod+Control+s mark sec; focus output right; mark prim; [con_mark="sec"] focus; move workspace to output right; [con_mark="prim"] focus; move workspace to output right; [con_mark="prim"] focus
+# move workspace to output right; focus output right; workspace prev_on_output; move workspace to output right
+
+# rotate workspaces to the right and follow
+bindsym $mod+$meta+s exec --no-startup-id swap-display.sh
+
+
+
 # switch to workspace
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
@@ -212,12 +222,6 @@ bindsym $mod+$meta+7 move container to workspace 7
 bindsym $mod+$meta+8 move container to workspace 8
 bindsym $mod+$meta+9 move container to workspace 9
 
-
-# swap screens
-# bindsym $mod+$meta+s mark sec; focus output right; mark prim; [con_mark="sec"] focus; move workspace to output right; [con_mark="prim"] focus; move workspace to output right; [con_mark="prim"] focus
-# move workspace to output right; focus output right; workspace prev_on_output; move workspace to output right
-bindsym $mod+Control+s exec /home/makmiller/.i3/switch.py
-bindsym $mod+$meta+s exec /home/makmiller/.i3/switch.py; focus output right
 
 # automatic back-and-forth when switching to the current workspace
 workspace_auto_back_and_forth yes
