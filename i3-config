@@ -287,7 +287,7 @@ colors {
 
 # turing machine
 bar {
-	# output DP-4
+	output DP-4
 	output HDMI-0
         status_command i3status --config ~/config-files/general/x-configs/i3status-turing
 	tray_output primary
