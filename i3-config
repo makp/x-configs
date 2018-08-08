@@ -47,6 +47,8 @@ bindsym $mod+Shift+c kill
 # dmenu
 # i3-dmenu-desktop is a wrapper around dmenu which only displays applications
 # shipping a .desktop file.
+
+
 bindsym $mod+d focus right
 
 # change focus
@@ -184,8 +186,7 @@ bindsym $mod+Shift+b move workspace to output left
 bindsym $mod+Control+s mark sec; focus output right; mark prim; [con_mark="sec"] focus; move workspace to output right; [con_mark="prim"] focus; move workspace to output right; [con_mark="prim"] focus
 # move workspace to output right; focus output right; workspace prev_on_output; move workspace to output right
 
-# rotate workspaces to the right and follow
-bindsym $mod+$meta+s exec --no-startup-id swap-display.sh
+# bindsym $mod+$meta+s
 
 
 
