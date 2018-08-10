@@ -189,6 +189,9 @@ bindsym $mod+Control+s mark sec; focus output right; mark prim; [con_mark="sec"]
 # bindsym $mod+$meta+s
 
 
+# automatically put workspace 9 primary monitor
+# TODO: use primary as opposed to HDMI-0 doesn't work
+workspace 9 output HDMI-0
 
 # switch to workspace
 bindsym $mod+1 workspace number 1
