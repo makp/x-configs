@@ -1,19 +1,18 @@
 conky.config = {
--- The script in myscripts is pointing to this file. No need to symlink.
 	alignment = 'top_left',
 	xftalpha = 0.8,
 
--- options for preventing flickering
+	-- options for preventing flickering
 	double_buffer = true,-- double-buffer extension (DBE) support -- update window fast enough
 	own_window = true,
 
--- font
+	-- font
 	use_xft = true,
 	font = 'DejaVu Sans Book:size=8',
 
--- windows settings
+	-- windows settings
 	own_window_type = 'override',
--- another possible value is "desktop"
+	-- another possible value is "desktop"
 	own_window_transparent = true,
 	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
 
@@ -21,7 +20,7 @@ conky.config = {
 	draw_outline = false,
 	draw_borders = false,
 	stippled_borders = 1,
---border_margin 1
+	--border_margin 1
 	border_width = 1,
 	default_shade_color = 'black',
 	default_outline_color = 'black',
@@ -33,7 +32,7 @@ conky.config = {
 
 	maximum_width = 250,-- pixels
 
--- colors
+	-- colors
 	default_color = '#BADCDD',
 	color1 = 'gray23',-- #   # net
 	color3 = '#698b22',-- ram
@@ -43,8 +42,8 @@ conky.config = {
 	color6 = 'dodgerblue4',-- weather 
 	color7 = 'yellow',-- system management
 
-
 };
+
 
 conky.text = [[
 ${color gray7}${font OpenLogos:size=32}  t B U z 
