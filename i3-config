@@ -268,7 +268,6 @@ bindsym $mod+o mode "resize"
 # leibniz machine
 bar {
 	output eDP1
-	# output HDMI1
         status_command i3status --config ~/config-files/general/x-configs/i3status-ultrabook.conf
 	tray_output primary 	#show tray icons on the primary monitor
 	i3bar_command i3bar
