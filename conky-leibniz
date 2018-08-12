@@ -44,64 +44,6 @@ color6 dodgerblue4# weather
 color7 yellow # system management
 #
 
-#lua_load /home/makmiller/.conkyrcs/cpufreq.lua # function for printing the governor
-
-# Possible variables to be used:
-#
-#      Variable         Arguments                  Description                
-#  acpiacadapter                     ACPI ac adapter state.                   
-#  acpifan                           ACPI fan state                           
-#  acpitemp                          ACPI temperature.                        
-#  adt746xcpu                        CPU temperature from therm_adt746x       
-#  adt746xfan                        Fan speed from therm_adt746x             
-#  battery           (num)           Remaining capasity in ACPI or APM        
-#                                    battery. ACPI battery number can be      
-#                                    given as argument (default is BAT0).     
-#  buffers                           Amount of memory buffered                
-#  cached                            Amount of memory cached                  
-#  color             (color)         Change drawing color to color            
-#  cpu                               CPU usage in percents                    
-#  cpubar            (height)        Bar that shows CPU usage, height is      
-#                                    bar's height in pixels                   
-#  downspeed         net             Download speed in kilobytes              
-#  downspeedf        net             Download speed in kilobytes with one     
-#                                    decimal                                  
-#  exec              shell command   Executes a shell command and displays    
-#                                    the output in torsmo. warning: this      
-#                                    takes a lot more resources than other    
-#                                    variables. I'd recommend coding wanted   
-#                                    behaviour in C and posting a patch :-).  
-#  execi             interval, shell Same as exec but with specific interval. 
-#                    command         Interval can't be less than              
-#                                    update_interval in configuration.        
-#  fs_bar            (height), (fs)  Bar that shows how much space is used on 
-#                                    a file system. height is the height in   
-#                                    pixels. fs is any file on that file      
-#                                    system.                                  
-#  fs_free           (fs)            Free space on a file system available    
-#                                    for users.                               
-#  fs_free_perc      (fs)            Free percentage of space on a file       
-#                                    system available for users.              
-#  fs_size           (fs)            File system size                         
-#  fs_used           (fs)            File system used space                   
-#  hr                (height)        Horizontal line, height is the height in 
-#                                    pixels                                   
-#  i2c               (dev), type, n  I2C sensor from sysfs (Linux 2.6). dev   
-#                                    may be omitted if you have only one I2C  
-#                                    device. type is either in (or vol)       
-#                                    meaning voltage, fan meaning fan or temp 
-#                                    meaning temperature. n is number of the  
-#                                    sensor. See /sys/bus/i2c/devices/ on     
-#                                    your local computer.                     
-#  kernel                            Kernel version                           
-#  loadavg           (1), (2), (3)   System load average, 1 is for past 1     
-#                                    minute, 2 for past 5 minutes and 3 for   
-#                                    past 15 minutes.                         
-#  machine                           Machine, i686 for example                
-#  mails                             Mail count in mail spool. You can use    
-#                              
-#  white blue green
-
 TEXT
 ${color gray7}${font OpenLogos:size=32}  t B U z 
  ${color1}${font PizzaDude Bullets:size=16}M${font} Up: ${upspeed eth0}${color1} Kb/s 
