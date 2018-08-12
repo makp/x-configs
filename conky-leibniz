@@ -125,15 +125,6 @@ ${color gray7}${font OpenLogos:size=32}  t B U z
      ${top name 3}${top cpu 3}
      ${hr 2}	    
 
-   # /home/:   ${fs_free /home/} / ${fs_size /home/}
-   # ${fs_bar /home/}
-   # /usr/:    ${fs_free /usr/} / ${fs_size /usr/} 
-   # ${fs_bar /usr/}
-   # /var/:    ${fs_free /var/} / ${fs_size /var/} 
-   # ${fs_bar /var/}
-   # /tmp/:    ${fs_free /tmp/} / ${fs_size /tmp/} 
-   # ${fs_bar /tmp/}
-
    ${color2}${font StyleBats:size=16}A${font} Load: ${loadavg}   (${hwmon 0 temp 1} C) 
    ${cpugraph 20 000000 ffffff}
    Core 0: ${cpu cpu0}% ${cpubar cpu0 8,115} ${freq 1}MHz
@@ -147,6 +138,17 @@ ${color gray7}${font OpenLogos:size=32}  t B U z
    ${membar 6}
    Swap: $swap/$swapmax 
    ${swapbar 6}      
+
+   /home/: ${fs_free /home/} / ${fs_size /home/}
+   ${fs_bar /home/}
+   /tmp/: ${fs_free /tmp/} / ${fs_size /tmp/}
+   ${fs_bar /tmp/}
+   Root:    ${fs_free /} / ${fs_size /}
+   ${fs_bar /}
+   # /var/:    ${fs_free /var/} / ${fs_size /var/}
+   # ${fs_bar /var/}
+
+
 
    ${color yellow3}${font StyleBats:size=16}8${font}  Battery: ${battery_percent}% ${battery_bar} 
 
