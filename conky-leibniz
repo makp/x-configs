@@ -1,51 +1,53 @@
+-- -*- mode: lua -*-
+
 conky.config = {
-	alignment = 'top_left',
-	xftalpha = 0.8,
+   alignment = 'top_left',
+   xftalpha = 0.8,
 
-	-- options for preventing flickering
-	double_buffer = true,-- double-buffer extension (DBE) support -- update window fast enough
-	own_window = true,
+   -- options for preventing flickering
+   double_buffer = true,-- double-buffer extension (DBE) support -- update window fast enough
+   own_window = true,
 
-	-- font
-	use_xft = true,
-	font = 'DejaVu Sans Book:size=8',
+   -- font
+   use_xft = true,
+   font = 'DejaVu Sans Book:size=8',
 
-	-- windows settings
-	own_window_type = 'override',
-	-- another possible value is "desktop"
-	own_window_transparent = true,
-	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+   -- windows settings
+   own_window_type = 'override',
+   -- another possible value is "desktop"
+   own_window_transparent = true,
+   own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
 
-	draw_shades = false,
-	draw_outline = false,
-	draw_borders = false,
-	stippled_borders = 1,
-	--border_margin 1
-	border_width = 1,
-	default_shade_color = 'black',
-	default_outline_color = 'black',
+   draw_shades = false,
+   draw_outline = false,
+   draw_borders = false,
+   stippled_borders = 1,
+   --border_margin 1
+   border_width = 1,
+   default_shade_color = 'black',
+   default_outline_color = 'black',
 
-	use_spacer = 'none',
-	no_buffers = true,
-	uppercase = false,
-	update_interval = 3,-- seconds
+   use_spacer = 'none',
+   no_buffers = true,
+   uppercase = false,
+   update_interval = 3,-- seconds
 
-	maximum_width = 250,-- pixels
+    maximum_width = 250,-- pixels
 
-	-- colors
-	default_color = '#BADCDD',
-	color1 = 'gray23',-- #   # net
-	color3 = '#698b22',-- ram
-	color2 = 'darkgreen',-- cpu
-	color4 = 'darkorange4',
-	color5 = '#F8DF58',-- e-mail
-	color6 = 'dodgerblue4',-- weather 
-	color7 = 'yellow',-- system management
+    -- colors
+    default_color = '#BADCDD',
+    color1 = 'gray23',-- #   # net
+    color3 = '#698b22',-- ram
+    color2 = 'darkgreen',-- cpu
+    color4 = 'darkorange4',
+    color5 = '#F8DF58',-- e-mail
+    color6 = 'dodgerblue4',-- weather 
+    color7 = 'yellow',-- system management
 
-};
+ };
 
 
-conky.text = [[
+ conky.text = [[
 ${color gray7}${font OpenLogos:size=32}  t B U z 
  ${color1}${font PizzaDude Bullets:size=16}M${font} Up: ${upspeed eth0}${color1} Kb/s 
    ${upspeedgraph wlp2s0 20 000000 ffffff}
