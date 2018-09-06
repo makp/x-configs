@@ -21,7 +21,7 @@ syndaemon -t -k -i 2 -d &
 setxkbmap dvorak
 
 # Xmodmap
-xmodmap ~/.Xmodmap 
+xmodmap ~/.Xmodmap
 
 # space2ctrl
 s2cctl start
@@ -35,9 +35,6 @@ numlockx
 # Wall paper
 # eval `cat ~/.fehbg`
 nitrogen --restore & 
-
-# Xmodmap again
-xmodmap ~/.Xmodmap
 
 # Multiple screens
 if [[ "$2" == "vga" ]] ; then
