@@ -246,29 +246,29 @@ bindsym $mod+$meta+n resize grow height 100 px or 1 ppt
 bindsym $mod+$meta+t resize shrink height 100 px or 1 ppt
 bindsym $mod+$meta+f resize grow width 100 px or 1 ppt
 
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym b           resize shrink width 10 px or 10 ppt
-        bindsym n           resize grow height 10 px or 10 ppt
-        bindsym t           resize shrink height 10 px or 10 ppt
-        bindsym f           resize grow width 10 px or 10 ppt
+# mode "resize" {
+#         # These bindings trigger as soon as you enter the resize mode
+#         # Pressing left will shrink the window’s width.
+#         # Pressing right will grow the window’s width.
+#         # Pressing up will shrink the window’s height.
+#         # Pressing down will grow the window’s height.
+#         bindsym b           resize shrink width 10 px or 10 ppt
+#         bindsym n           resize grow height 10 px or 10 ppt
+#         bindsym t           resize shrink height 10 px or 10 ppt
+#         bindsym f           resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left        resize shrink width 10 px or 10 ppt
-        bindsym Down        resize grow height 10 px or 10 ppt
-        bindsym Up          resize shrink height 10 px or 10 ppt
-        bindsym Right       resize grow width 10 px or 10 ppt
+#         # same bindings, but for the arrow keys
+#         bindsym Left        resize shrink width 10 px or 10 ppt
+#         bindsym Down        resize grow height 10 px or 10 ppt
+#         bindsym Up          resize shrink height 10 px or 10 ppt
+#         bindsym Right       resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
+#         # back to normal: Enter or Escape
+#         bindsym Return mode "default"
+#         bindsym Escape mode "default"
+# }
 
-bindsym $mod+o mode "resize"
+# bindsym $mod+o mode "resize"
 
 # leibniz machine
 bar {
