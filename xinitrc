@@ -49,7 +49,7 @@ elif [[ "$2" == "hdmi" ]]; then
 elif [[ "$2" == "turing" ]]; then
     xrandr --output HDMI-0 --auto --output DP-4 --left-of HDMI-0
     xrandr --output DP-4 --mode 2560x1440 --rate 144
-    xrandr --output HDMI-0 --primary
+    xrandr --output DP-4 --primary
 else
     echo "Only one screen"
 fi
