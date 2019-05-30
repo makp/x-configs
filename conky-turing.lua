@@ -1,53 +1,50 @@
 conky.config = {
--- -*-conf-*-
 -- The script in myscripts is pointing to this file. No need to symlink.
-	alignment = 'top_left',
--- gap_X 
-	xftalpha = 0.8,
+   alignment = 'top_left',
+   gap_x = 2565,
+   xftalpha = 0.8,
 
--- options for preventing flickering
-	double_buffer = true,-- double-buffer extension (DBE) support -- update window fast enough
-	own_window = true,
+   -- options for preventing flickering
+   double_buffer = true,-- double-buffer extension (DBE) support -- update window fast enough
+   own_window = true,
 
--- font
-	use_xft = true,
-	font = 'DejaVu Sans Book:size=7',
+   -- font
+   use_xft = true,
+   font = 'DejaVu Sans Book:size=7',
 
--- windows settings
-	own_window_type = 'override',
--- another possible value is "desktop"
-	own_window_transparent = true,
-	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+   -- windows settings
+   own_window_type = 'override',
+   -- another possible value is "desktop"
+   own_window_transparent = true,
+   own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
 
-	draw_shades = false,
-	draw_outline = false,
-	draw_borders = false,
-	stippled_borders = 1,
---border_margin 1
-	border_width = 1,
-	default_shade_color = 'black',
-	default_outline_color = 'black',
+   draw_shades = false,
+   draw_outline = false,
+   draw_borders = false,
+   stippled_borders = 1,
+   --border_margin 1
+   border_width = 1,
+   default_shade_color = 'black',
+   default_outline_color = 'black',
 
-	use_spacer = 'none',
-	no_buffers = true,
-	uppercase = false,
-	update_interval = 3,-- seconds
+   use_spacer = 'none',
+   no_buffers = true,
+   uppercase = false,
+   update_interval = 3,-- seconds
 
-	maximum_width = 300,-- pixels
+   maximum_width = 300,-- pixels
 
--- colors
-	default_color = '#BADCDD',
-	color1 = 'gray23',-- #   # net
-	color3 = '#698b22',-- ram
-	color2 = '#365411',-- cpu
-	color4 = 'darkorange4',
-	color5 = '#9F9F1A',-- yellowish
-	color6 = 'dodgerblue4',-- weather
--- 3b6113
+   -- colors
+   default_color = '#BADCDD',
+   color1 = 'gray23',-- #   # net
+   color3 = '#698b22',-- ram
+   color2 = '#365411',-- cpu
+   color4 = 'darkorange4',
+   color5 = '#9F9F1A',-- yellowish
+   color6 = 'dodgerblue4',-- weather
+   -- 3b6113
 
-	color7 = 'yellow',-- system management
-
-
+   color7 = 'yellow',-- system management
 };
 
 conky.text = [=[
