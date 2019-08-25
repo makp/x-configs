@@ -1,6 +1,6 @@
 Menu["Menu for the X Front End",
 {
-	Menu["&File", 
+	Menu["Fi&le", 
 	{
 		Menu["&New",
 		{
@@ -610,7 +610,7 @@ Menu["Menu for the X Front End",
 		Delimiter,
 		MenuItem["Start Windows Listing" , "MenuListWindows", MenuAnchor->True]
 	}],
-	Menu["&Help", 
+	Menu["Help", 
 	{
 		MenuItem["Wolfram &Documentation", "OpenHelpLink"],
 		MenuItem["&Find Selected Function", FrontEnd`SelectionHelpDialog[True], MenuKey["F1", Modifiers->{}]],
