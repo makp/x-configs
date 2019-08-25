@@ -82,6 +82,7 @@ EventTranslations[{
 	Item[KeyEvent["Backspace"], "DeletePrevious"],
    	Item[KeyEvent["h", Modifiers->{Control}], "DeletePrevious"],
 	Item[KeyEvent["Delete"], "DeleteNext"], 
+	Item[KeyEvent["d", Modifiers->{Control}], "DeleteNext"], 
 	Item[KeyEvent["KP_Delete"], "DeleteNext"], 
 	Item[KeyEvent["Backspace", Modifiers->{Control}], "DeletePreviousWord"],
 	Item[KeyEvent["h", Modifiers->{Command}], "DeletePreviousWord"],
