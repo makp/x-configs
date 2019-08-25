@@ -79,10 +79,12 @@ EventTranslations[{
 (* Input *)
 	Item[KeyEvent["Return"], "Linebreak"], 
 	Item[KeyEvent["Tab"], "Tab"], 
-	Item[KeyEvent["Backspace"], "DeletePrevious"], 
+	Item[KeyEvent["Backspace"], "DeletePrevious"],
+   	Item[KeyEvent["h", Modifiers->{Control}], "DeletePrevious"],
 	Item[KeyEvent["Delete"], "DeleteNext"], 
 	Item[KeyEvent["KP_Delete"], "DeleteNext"], 
 	Item[KeyEvent["Backspace", Modifiers->{Control}], "DeletePreviousWord"],
+	Item[KeyEvent["h", Modifiers->{Command}], "DeletePreviousWord"],
 	Item[KeyEvent["Delete", Modifiers->{Control}], "DeleteNextWord"],
 
 (* Typesetting input *)
