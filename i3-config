@@ -103,6 +103,9 @@ bindsym $mod+minus focus parent
 # focus the parent container
 bindsym $mod+c focus mode_toggle
 
+# don't focus window upon opening
+no_focus [window_role="pop-up"]
+
 # 
 force_focus_wrapping yes
 
