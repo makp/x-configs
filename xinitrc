@@ -36,9 +36,6 @@ numlockx
 # eval `cat ~/.fehbg`
 nitrogen --restore & 
 
-# ssh-agent
-eval $(ssh-agent)
-
 # Multiple screens
 if [[ "$2" == "vga" ]] ; then
     xrandr --output LVDS --auto --primary
