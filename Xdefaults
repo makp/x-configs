@@ -8,9 +8,9 @@ URxvt*font: xft:DejaVu Sans Mono:pixelsize=14
 URxvt*boldFont: xft:DejaVu Sans Mono:bold:pixelsize=14
 
 !! transparency stuff
-URxvt.transparent: true
-URxvt.tintColor: #ffffff
-URxvt.shading: 40 ! the higher the more transparent
+! URxvt.transparent: true
+! URxvt.tintColor: #ffffff
+! URxvt.shading: 40 ! the higher the more transparent
 
 !! fade when windows not selected
 URxvt.fading: 30
@@ -24,6 +24,7 @@ URxvt.fading: 30
 ! foreground/background
 URxvt.background: #202020
 URxvt.foreground: #ffffff
+! URxvt.cursorColor: #afbfbf
 ! black
 URxvt.color0  : #000000
 URxvt.color8  : #555555
