@@ -68,10 +68,3 @@ XDvi*geometry: +119+7
 XDvi.expert: True ! this removes the command buttons
 XDvi.yOffset: 1cm
 XDvi.hushChecksums: True
-
-
-! emacs preferences -------------------------
-Emacs.FontBackend: xft
-Emacs.font: DejaVu Sans Mono-10
-!Emacs.font: Inconsolata-12
-!Emacs.toolBar: -1
