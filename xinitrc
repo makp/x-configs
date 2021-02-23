@@ -24,7 +24,7 @@ setxkbmap dvorak
 xmodmap ~/.Xmodmap
 
 # space2ctrl
-s2cctl start
+# s2cctl start
 
 # activating numlock X11
 numlockx
