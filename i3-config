@@ -81,10 +81,12 @@ bindsym $mod+Control+Down move down
 bindsym $mod+Control+Up move up
 bindsym $mod+Control+Right move right
 
-bindsym $mod+$meta+h split h	# split in horizontal orientation
-bindsym $mod+$meta+d split v	# split in vertical orientation
+# splits
+bindsym $mod+$meta+h split h
+bindsym $mod+$meta+d split v
 
-bindsym $mod+space fullscreen # enter fullscreen mode for the focused container
+# enter fullscreen mode for the focused container
+bindsym $mod+space fullscreen
 
 popup_during_fullscreen smart
 
@@ -222,7 +224,7 @@ bindsym $mod+$meta+f resize grow width 100 px or 1 ppt
 bar {
 	output eDP1
         status_command i3status --config ~/config-files/general/x-configs/i3status-ultrabook.conf
-	tray_output primary 	#show tray icons on the primary monitor
+	tray_output primary
 	i3bar_command i3bar
         font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
         font pango:DejaVu Sans Mono 10
@@ -265,7 +267,7 @@ colors {
 bar {
 	output DP-1
         status_command i3status --config ~/config-files/general/x-configs/i3status-office-computer.conf
-#	tray_output primary 	#show tray icons on the primary monitor
+#	tray_output primary
 	i3bar_command i3bar
         font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
         font pango:DejaVu Sans Mono 10
