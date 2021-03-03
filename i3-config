@@ -14,12 +14,6 @@
 # unless a different font is used in the bar {} block below.
 font pango:DejaVu Sans Mono 10
 
-set $mod Mod4
-set $meta Mod1
-
-# use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
 # Zenburn styled i3 (from i3 FAQ)
 set $bg     #2c2c2e
 set $fg     #9f9f9f
@@ -38,27 +32,39 @@ client.unfocused            $bg        $bg         $ia
 client.focused_inactive     $bg        $bg         $ac
 client.urgent               $rd        $rd         $tx
 
-# start a terminal
-# bindsym $mod+u exec i3-sensible-terminal
+# don't focus window upon opening
+no_focus [window_role="pop-up"]
+force_focus_wrapping yes
+
+set $mod Mod4
+set $meta Mod1
+
+# use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# automatic back-and-forth when switching to the current workspace
+workspace_auto_back_and_forth yes
+bindsym $mod+v workspace back_and_forth
+
+# Move all floating windows to the scratchpad
+bindsym $mod+backslash [floating] move scratchpad
+
+# move to next workspace
+bindsym $mod+Tab workspace next_on_output
+bindsym $mod+r workspace next_on_output
+bindsym $mod+d exec --no-startup-id "/home/makmiller/config-files/general/x-configs/i3-new-workspace.sh"
 
 # kill focused window
 bindsym $mod+Shift+c kill
 
-# dmenu
-# i3-dmenu-desktop is a wrapper around dmenu which only displays applications
-# shipping a .desktop file.
-
-
-# bindsym $mod+d focus right
-
-# change focus
-bindsym $mod+b focus left
-bindsym $mod+n focus down
-bindsym $mod+t focus up
-bindsym $mod+f focus right
 bindsym $mod+h focus output right
 
-# alternatively, you can use the cursor keys
+# navigation
+bindsym $mod+b focus left
+bindsym $mod+n focus down
+bindsym $mod+p focus up
+bindsym $mod+f focus right
+
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
@@ -67,25 +73,18 @@ bindsym $mod+Right focus right
 # move focused window
 bindsym $mod+Control+b move left 150px
 bindsym $mod+Control+n move down 150px
-bindsym $mod+Control+t move up 150px
+bindsym $mod+Control+p move up 150px
 bindsym $mod+Control+f move right 150px
 
-# alternatively, you can use the arrow keys
 bindsym $mod+Control+Left move left 
 bindsym $mod+Control+Down move down 
 bindsym $mod+Control+Up move up
 bindsym $mod+Control+Right move right
 
-# split in horizontal orientation
-bindsym $mod+$meta+h split h
+bindsym $mod+$meta+h split h	# split in horizontal orientation
+bindsym $mod+$meta+d split v	# split in vertical orientation
 
-# split in vertical orientation
-bindsym $mod+$meta+d split v
-
-# enter fullscreen mode for the focused container
-bindsym $mod+space fullscreen
-# exec --no-startup-id xautolock -toggle
-# bindsym $mod+$meta+space fullscreen; exec xdotool mousemove --sync 1920 0
+bindsym $mod+space fullscreen # enter fullscreen mode for the focused container
 
 popup_during_fullscreen smart
 
@@ -103,51 +102,38 @@ bindsym $mod+minus focus parent
 # focus the parent container
 bindsym $mod+c focus mode_toggle
 
-# don't focus window upon opening
-no_focus [window_role="pop-up"]
-
-# 
-force_focus_wrapping yes
-
 # focus the child container
 bindsym $mod+g focus child
-
-
-# move to next workspace
-bindsym $mod+Tab workspace next_on_output
-bindsym $mod+r workspace next_on_output
-bindsym $mod+d exec --no-startup-id "/home/makmiller/config-files/general/x-configs/i3-new-workspace.sh"
-
 
 # rename workspace
 bindsym $mod+Shift+r exec i3-input -F 'rename workspace to "%s"' -P 'Novo nome: '
 
 # Applications
-bindsym $mod+Control+w exec google-chrome-stable
-bindsym $mod+w [class="Google-chrome"] scratchpad show
+bindsym $mod+Control+w exec firefox
+bindsym $mod+w [class="firefox"] scratchpad show
+# google-chrome-stable; Google-chrome
 
 # for_window [class="Mathematica"] floating enable
 
-bindsym $mod+Control+m exec urxvt
+bindsym $mod+Control+t exec urxvt
 for_window [instance="urxvt_scratchpad"] floating enable, move to scratchpad, border none
 exec urxvt -name urxvt_scratchpad -g 78X14+600+20 -e zsh -c 'tmux attach -d'
-bindsym $mod+m [instance="urxvt_scratchpad"] scratchpad show
+bindsym $mod+t [instance="urxvt_scratchpad"] scratchpad show
 
-bindsym $mod+Control+v exec edit.sh
-bindsym $mod+v [class="Emacs"] scratchpad show
+bindsym $mod+Control+e exec edit.sh
+bindsym $mod+e [class="Emacs"] scratchpad show
 
-bindsym $mod+0 [instance="^(?!urxvt_scratchpad)" class="^(?!Emacs)(?!Google-chrome)"] scratchpad show
+bindsym $mod+Control+m exec youtube-music-bin
+bindsym $mod+m [class="YouTube Music"] scratchpad show
+
+bindsym $mod+0 [instance="^(?!urxvt_scratchpad)" class="^(?!Emacs)(?!firefox)"] scratchpad show
 bindsym $mod+$meta+0 scratchpad show
 bindsym $mod+Shift+0 move container to scratchpad
-
-# Move all floating windows to the scratchpad
-bindsym $mod+backslash [floating] move scratchpad
 
 # volume control
 bindsym XF86AudioLowerVolume exec "amixer sset Master 1%- unmute && /home/makmiller/scripts/myscripts/volume.sh" 
 #(0            , 0x1008ff11)
 bindsym $mod+F2 exec "amixer sset Master 1%- unmute && /home/makmiller/scripts/myscripts/volume.sh" 
-
 
 bindsym XF86AudioRaiseVolume exec "amixer sset Master 1%+ unmute && /home/makmiller/scripts/myscripts/volume.sh"
 # (0            , 0x1008ff13)
@@ -157,26 +143,21 @@ bindsym XF86AudioMute exec "amixer sset Master toggle"
 # (0            , 0x1008ff12)
 bindsym $mod+F1 exec "amixer sset Master toggle"
 
-# # -- music tracks
+# -- music tracks
 # bindsym XF86AudioNext exec emacsclient --eval "(emms-next)"
-# # (0            , 0x1008ff17)
+# (0            , 0x1008ff17)
 # bindsym $mod+F8 exec emacsclient --eval "(emms-next)"
-
-
 # bindsym XF86AudioPrev exec emacsclient --eval "(emms-previous)"
-# # (0            , 0x1008ff16)
+# (0            , 0x1008ff16)
 # bindsym $mod+F7 exec emacsclient --eval "(emms-previous)"
-
 # bindsym XF86AudioPlay exec emacsclient --eval "(emms-pause)"
-# # # (0            , 0x1008ff14)
+# (0            , 0x1008ff14)
 # bindsym $mod+F5 exec emacsclient --eval "(emms-pause)"
-
-# # bindsym XF86XK_AudioStop exec 
-# # # (0            , 0x1008ff15)
+# bindsym XF86XK_AudioStop exec 
+# (0            , 0x1008ff15)
 
 bindsym $mod+Shift+n move container to output right; focus output right
 bindsym $mod+Shift+t move container to output left; focus output left
-
 bindsym $mod+Shift+f move workspace to output right
 bindsym $mod+Shift+b move workspace to output left
 
@@ -184,9 +165,6 @@ bindsym $mod+Shift+b move workspace to output left
 # poor man's version of swap
 bindsym $mod+Control+s mark sec; focus output right; mark prim; [con_mark="sec"] focus; move workspace to output right; [con_mark="prim"] focus; move workspace to output right; [con_mark="prim"] focus
 # move workspace to output right; focus output right; workspace prev_on_output; move workspace to output right
-
-# bindsym $mod+$meta+s
-
 
 # automatically put workspace 9 primary monitor
 # TODO: use primary as opposed to HDMI-0 doesn't work
@@ -226,16 +204,12 @@ bindsym $mod+$meta+8 move container to workspace 8
 bindsym $mod+$meta+9 move container to workspace 9
 
 
-# automatic back-and-forth when switching to the current workspace
-workspace_auto_back_and_forth yes
-bindsym $mod+p workspace back_and_forth
-
 # reload the configuration file
 bindsym $mod+Control+r reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+$meta+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Ta afim de sair?.' -b 'Sim' 'i3-msg exit'"
+bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'Ta afim de sair?.' -b 'Sim' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 bindsym $mod+$meta+b resize shrink width 100 px or 1 ppt
@@ -243,29 +217,6 @@ bindsym $mod+$meta+n resize grow height 100 px or 1 ppt
 bindsym $mod+$meta+t resize shrink height 100 px or 1 ppt
 bindsym $mod+$meta+f resize grow width 100 px or 1 ppt
 
-# mode "resize" {
-#         # These bindings trigger as soon as you enter the resize mode
-#         # Pressing left will shrink the window’s width.
-#         # Pressing right will grow the window’s width.
-#         # Pressing up will shrink the window’s height.
-#         # Pressing down will grow the window’s height.
-#         bindsym b           resize shrink width 10 px or 10 ppt
-#         bindsym n           resize grow height 10 px or 10 ppt
-#         bindsym t           resize shrink height 10 px or 10 ppt
-#         bindsym f           resize grow width 10 px or 10 ppt
-
-#         # same bindings, but for the arrow keys
-#         bindsym Left        resize shrink width 10 px or 10 ppt
-#         bindsym Down        resize grow height 10 px or 10 ppt
-#         bindsym Up          resize shrink height 10 px or 10 ppt
-#         bindsym Right       resize grow width 10 px or 10 ppt
-
-#         # back to normal: Enter or Escape
-#         bindsym Return mode "default"
-#         bindsym Escape mode "default"
-# }
-
-# bindsym $mod+o mode "resize"
 
 # leibniz machine
 bar {
