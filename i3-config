@@ -59,6 +59,18 @@ bindsym $mod+Shift+c kill
 
 bindsym $mod+h focus output right
 
+#
+set $mode_launcher Launch: [M]athematica [C]hrome
+bindsym $mod+o mode "$mode_launcher"
+
+mode "$mode_launcher" {
+    bindsym m exec mathematica
+    bindsym c exec google-chrome-stable
+
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
+
 # navigation
 bindsym $mod+b focus left
 bindsym $mod+n focus down
