@@ -128,9 +128,6 @@ bindsym $mod+w [class="Google-chrome"] scratchpad show
 
 # for_window [class="Mathematica"] floating enable
 
-bindsym $mod+Control+x exec zotero
-bindsym $mod+x [class="Zotero"] scratchpad show
-
 bindsym $mod+Control+m exec urxvt
 for_window [instance="urxvt_scratchpad"] floating enable, move to scratchpad, border none
 exec urxvt -name urxvt_scratchpad -g 78X14+600+20 -e zsh -c 'tmux attach -d'
@@ -145,10 +142,6 @@ bindsym $mod+Shift+0 move container to scratchpad
 
 # Move all floating windows to the scratchpad
 bindsym $mod+backslash [floating] move scratchpad
-
-
-# bindsym --release $mod+period exec --no-startup-id pdf-up.sh
-# bindsym --release $mod+e      exec --no-startup-id pdf-down.sh
 
 # volume control
 bindsym XF86AudioLowerVolume exec "amixer sset Master 1%- unmute && /home/makmiller/scripts/myscripts/volume.sh" 
@@ -364,18 +357,13 @@ colors {
 # conky
 exec conky
 
-# Google chrome
-exec google-chrome-stable
-
 # Emacs
-for_window [title="emacs_scratchpad"] floating enable, move to scratchpad, border 10px
-exec edit.sh --eval '(progn (set-frame-name "emacs_scratchpad") (setq default-frame-alist (quote ((width  . 120) (height . 20)))))'
-
+# for_window [title="emacs_scratchpad"] floating enable, move to scratchpad, border 10px
+# exec edit.sh --eval '(progn (set-frame-name "emacs_scratchpad") (setq default-frame-alist (quote ((width  . 120) (height . 20)))))'
 
 # screen lock
 exec xautolock -detectsleep -time 15 -locker 'lock.sh'
 bindsym $mod+Shift+l exec "lock.sh"
-
 
 # daemons
 exec insync start
