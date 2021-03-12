@@ -60,12 +60,13 @@ bindsym $mod+Shift+c kill
 bindsym $mod+h focus output right
 
 #
-set $launch_misc_apps Launch: [m]athematica [c]hrome
+set $launch_misc_apps Launch: [m]athematica [c]hrome [b]rave
 bindsym $mod+o mode "$launch_misc_apps"
 
 mode "$launch_misc_apps" {
     bindsym m exec mathematica, mode "default"
     bindsym c exec google-chrome-stable, mode "default"
+    bindsym b exec brave, mode "default"
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
