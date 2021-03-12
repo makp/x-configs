@@ -72,12 +72,15 @@ mode "$launch_misc_apps" {
     bindsym Return mode "default"
 }
 
-set $x_keys i3WM: [e]xit re[l]oad re[s]tart 
+set $x_keys i3WM: [e]xit re[l]oad re[s]tart
 bindsym $mod+x mode "$x_keys"
 mode "$x_keys" {
     bindsym e mode "default", exit
     bindsym l mode "default", reload
     bindsym s mode "default", restart
+
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
 }
 
 # navigation
