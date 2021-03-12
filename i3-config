@@ -60,15 +60,23 @@ bindsym $mod+Shift+c kill
 bindsym $mod+h focus output right
 
 #
-set $mode_launcher Launch: [M]athematica [C]hrome
-bindsym $mod+o mode "$mode_launcher"
+set $launch_misc_apps Launch: [m]athematica [c]hrome
+bindsym $mod+o mode "$launch_misc_apps"
 
-mode "$mode_launcher" {
+mode "$launch_misc_apps" {
     bindsym m exec mathematica, mode "default"
     bindsym c exec google-chrome-stable, mode "default"
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
+}
+
+set $x_keys i3WM: [e]xit re[l]oad re[s]tart 
+bindsym $mod+x mode "$x_keys"
+mode "$x_keys" {
+    bindsym e mode "default", exit
+    bindsym l mode "default", reload
+    bindsym s mode "default", restart
 }
 
 # navigation
@@ -217,13 +225,6 @@ bindsym $mod+$meta+7 move container to workspace 7
 bindsym $mod+$meta+8 move container to workspace 8
 bindsym $mod+$meta+9 move container to workspace 9
 
-
-# reload the configuration file
-bindsym $mod+Control+r reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+$meta+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'Ta afim de sair?.' -b 'Sim' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 bindsym $mod+$meta+b resize shrink width 100 px or 1 ppt
