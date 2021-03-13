@@ -134,28 +134,6 @@ bindsym $mod+g focus child
 # rename workspace
 bindsym $mod+Shift+r exec i3-input -F 'rename workspace to "%s"' -P 'Novo nome: '
 
-# Applications
-bindsym $mod+Control+w exec firefox
-bindsym $mod+w [class="firefox"] scratchpad show
-# google-chrome-stable; Google-chrome
-
-# for_window [class="Mathematica"] floating enable
-
-bindsym $mod+Control+t exec urxvt
-for_window [instance="urxvt_scratchpad"] floating enable, move to scratchpad, border none
-exec urxvt -name urxvt_scratchpad -g 78X14+600+20 -e zsh -c 'tmux attach -d'
-bindsym $mod+t [instance="urxvt_scratchpad"] scratchpad show
-
-bindsym $mod+Control+e exec edit.sh
-bindsym $mod+e [class="Emacs"] scratchpad show
-
-bindsym $mod+Control+m exec youtube-music-bin
-bindsym $mod+m [class="YouTube Music"] scratchpad show
-
-bindsym $mod+0 [instance="^(?!urxvt_scratchpad)" class="^(?!Emacs)(?!firefox)"] scratchpad show
-bindsym $mod+$meta+0 scratchpad show
-bindsym $mod+Shift+0 move container to scratchpad
-
 # volume control
 bindsym XF86AudioLowerVolume exec "amixer sset Master 1%- unmute && /home/makmiller/scripts/myscripts/volume.sh" 
 #(0            , 0x1008ff11)
@@ -300,23 +278,47 @@ colors {
     }
 }
 
+## ===============
+## App keybindings
+## ===============
 
-# Start a few applications
+# main browser
+bindsym $mod+Control+w exec firefox
+bindsym $mod+w [class="firefox"] scratchpad show
 
-# conky
-exec conky
+# terminal
+bindsym $mod+Control+t exec urxvt
+for_window [instance="urxvt_scratchpad"] floating enable, move to scratchpad, border none
+exec urxvt -name urxvt_scratchpad -g 78X14+600+20 -e zsh -c 'tmux attach -d'
+bindsym $mod+t [instance="urxvt_scratchpad"] scratchpad show
 
-# Emacs
+# emacs
+bindsym $mod+Control+e exec edit.sh
+bindsym $mod+e [class="Emacs"] scratchpad show
 # for_window [title="emacs_scratchpad"] floating enable, move to scratchpad, border 10px
 # exec edit.sh --eval '(progn (set-frame-name "emacs_scratchpad") (setq default-frame-alist (quote ((width  . 120) (height . 20)))))'
 
+# music
+bindsym $mod+Control+m exec youtube-music-bin
+bindsym $mod+m [class="YouTube Music"] scratchpad show
+
+# scratchpad
+bindsym $mod+0 [instance="^(?!urxvt_scratchpad)" class="^(?!Emacs)(?!firefox)"] scratchpad show
+bindsym $mod+$meta+0 scratchpad show
+bindsym $mod+Shift+0 move container to scratchpad
+
 # screen lock
-exec xautolock -detectsleep -time 15 -locker 'lock.sh'
 bindsym $mod+Shift+l exec "lock.sh"
 
-# daemons
-exec insync start
+# for_window [class="Mathematica"] floating enable
 
-# Scratchpads
-# https://faq.i3wm.org/question/378/start-urxvt-in-a-scratchpad/
-# https://faq.i3wm.org/question/138/multiple-scratchpad/
+# Refs on scratchpads:
+# https://faq.i3wm.org/question/378/start-urxvt-in-a-scratchpad.1.html
+# https://faq.i3wm.org/question/138/multiple-scratchpad.1.html
+
+## ========================
+## Start a few applications
+## ========================
+exec conky
+exec xautolock -detectsleep -time 15 -locker 'lock.sh'
+exec insync start
