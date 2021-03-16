@@ -60,13 +60,13 @@ bindsym $mod+Shift+c kill
 bindsym $mod+h focus output right
 
 #
-set $launch_misc_apps Launch: [m]athematica [c]hrome [b]rave
+set $launch_misc_apps Launch: [m]athematica [c]hrome [f]irefox
 bindsym $mod+o mode "$launch_misc_apps"
 
 mode "$launch_misc_apps" {
     bindsym m exec mathematica, mode "default"
     bindsym c exec google-chrome-stable, mode "default"
-    bindsym b exec brave, mode "default"
+    bindsym f exec firefox, mode "default"
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
@@ -283,8 +283,8 @@ colors {
 ## ===============
 
 # main browser
-bindsym $mod+Control+w exec firefox
-bindsym $mod+w [class="firefox"] scratchpad show
+bindsym $mod+Control+w exec brave
+bindsym $mod+w [class="Brave-browser"] scratchpad show
 
 # terminal
 bindsym $mod+Control+t exec urxvt
@@ -303,7 +303,7 @@ bindsym $mod+Control+m exec youtube-music-bin
 bindsym $mod+m [class="YouTube Music"] scratchpad show
 
 # scratchpad
-bindsym $mod+0 [instance="^(?!urxvt_scratchpad)" class="^(?!Emacs)(?!firefox)"] scratchpad show
+bindsym $mod+0 [instance="^(?!urxvt_scratchpad)" class="^(?!Emacs)(?!Brave-browser)"] scratchpad show
 bindsym $mod+$meta+0 scratchpad show
 bindsym $mod+Shift+0 move container to scratchpad
 
