@@ -239,7 +239,7 @@ colors {
 bar {
 	output DP-4
 	output HDMI-0
-        status_command i3status --config ~/config-files/general/x-configs/i3status-turing
+        status_command i3status --config ~/config-files/general/x-configs/i3status-turing.conf
 	tray_output primary
 	i3bar_command i3bar
         font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
