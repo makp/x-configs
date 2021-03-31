@@ -1,5 +1,3 @@
--- -*- mode: lua -*-
-
 conky.config = {
    alignment = 'top_left',
    xftalpha = 0.8,
