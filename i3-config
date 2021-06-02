@@ -299,7 +299,7 @@ bindsym $mod+e [class="Emacs"] scratchpad show
 # exec edit.sh --eval '(progn (set-frame-name "emacs_scratchpad") (setq default-frame-alist (quote ((width  . 120) (height . 20)))))'
 
 # music
-bindsym $mod+Control+m exec youtube-music-bin
+bindsym $mod+Control+m exec youtube-music
 bindsym $mod+m [class="YouTube Music"] scratchpad show
 
 # scratchpad
