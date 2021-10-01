@@ -95,8 +95,6 @@ ${color gray7}${font OpenLogos:size=32}  t B U z
    Swap: $swap/$swapmax 
    ${swapbar 6}      
 
-   ${color yellow3}${font StyleBats:size=16}8${font}  Battery: ${battery_percent}% ${battery_bar} 
-
    ${color7}${font StyleBats:size=18}P${font}  Work:  ${uptime_short} (Linux $kernel)
 
    # sincro out: ${font DejaVu Sans Book:size=8:bold}${execi 500 sed -n 1p /home/makmiller/myscripts/log-files/sincro-out.log}${font}
