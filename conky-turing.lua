@@ -10,7 +10,7 @@ conky.config = {
 
    -- font
    use_xft = true,
-   font = 'DejaVu Sans Book:size=7',
+   font = 'DejaVu Sans Book:size=6',
 
    -- windows settings
    own_window_type = 'override',
