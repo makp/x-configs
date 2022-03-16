@@ -310,7 +310,9 @@ bindsym $mod+Shift+0 move container to scratchpad
 # screen lock
 bindsym $mod+Shift+l exec "lock.sh"
 
-# for_window [class="Mathematica"] floating enable
+# origin windows
+assign [title="^Origin$"] Origin
+for_window [title="^Origin$"] floating enable
 
 # Refs on scratchpads:
 # https://faq.i3wm.org/question/378/start-urxvt-in-a-scratchpad.1.html
