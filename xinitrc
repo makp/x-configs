@@ -18,13 +18,10 @@ syndaemon -t -k -i 2 -d &
 # -d: starts as a daemon
 
 # Dvorak keyboard
-setxkbmap dvorak
+setxkbmap -variant dvorak
 
 # Xmodmap
 xmodmap ~/.Xmodmap
-
-# space2ctrl
-# s2cctl start
 
 # activating numlock X11
 numlockx
