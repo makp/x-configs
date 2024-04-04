@@ -287,10 +287,10 @@ bindsym $mod+Control+w exec brave
 bindsym $mod+w [class="Brave-browser"] scratchpad show
 
 # terminal
-bindsym $mod+Control+t exec urxvt
-for_window [instance="urxvt_scratchpad"] floating enable, move to scratchpad, border none
-exec urxvt -name urxvt_scratchpad -g 78X14+600+20 -e zsh -c 'tmux attach -d'
-bindsym $mod+t [instance="urxvt_scratchpad"] scratchpad show
+bindsym $mod+Control+t exec alacritty
+for_window [title="term_scratchpad"] floating enable, move to scratchpad, border none
+exec alacritty --title 'term_scratchpad' --option window.dimensions.columns=98 --option window.dimensions.lines=14 --command zsh -c 'tmux attach -d'
+bindsym $mod+t [title="term_scratchpad"] scratchpad show
 
 # emacs
 bindsym $mod+Control+e exec edit.sh
@@ -303,7 +303,7 @@ bindsym $mod+Control+m exec youtube-music
 bindsym $mod+m [class="YouTube Music"] scratchpad show
 
 # scratchpad
-bindsym $mod+0 [instance="^(?!urxvt_scratchpad)" class="^(?!Emacs)(?!Brave-browser)"] scratchpad show
+bindsym $mod+0 [title="^(?!term_scratchpad)" class="^(?!Emacs)(?!Brave-browser)"] scratchpad show
 bindsym $mod+$meta+0 scratchpad show
 bindsym $mod+Shift+0 move container to scratchpad
 
