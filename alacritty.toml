@@ -1,3 +1,12 @@
+# Color theme
+import = [
+    "/usr/share/alacritty/themes/zenburn.toml"
+]
+
+# [colors.primary]
+# background = "#303030"
+# foreground = "#d8d8d8"
+
 [font]
 size = 8.0
 
@@ -16,3 +25,4 @@ style = "Bold Italic"
 [font.italic]
 family = "Hack Nerd Font Mono"
 style = "Italic"
+

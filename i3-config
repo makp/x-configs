@@ -289,7 +289,7 @@ bindsym $mod+w [class="Brave-browser"] scratchpad show
 # terminal
 bindsym $mod+Control+t exec alacritty
 for_window [title="term_scratchpad"] floating enable, move to scratchpad, border none
-exec alacritty --title 'term_scratchpad' --option window.dimensions.columns=98 --option window.dimensions.lines=14 --command zsh -c 'tmux attach -d'
+exec alacritty --title 'term_scratchpad' --option window.dimensions.columns=88 --option window.dimensions.lines=14 --command zsh -c 'tmux attach -d'
 bindsym $mod+t [title="term_scratchpad"] scratchpad show
 
 # emacs
