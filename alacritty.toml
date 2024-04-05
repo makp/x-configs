@@ -1,6 +1,6 @@
 # Color theme
 import = [
-    "/usr/share/alacritty/themes/zenburn.toml"
+    "/usr/share/alacritty/themes/gruvbox_dark.toml"
 ]
 
 # [colors.primary]
@@ -8,7 +8,7 @@ import = [
 # foreground = "#d8d8d8"
 
 [font]
-size = 8.0
+size = 10.0
 
 [font.normal]
 family = "Hack Nerd Font Mono"
