@@ -287,9 +287,9 @@ bindsym $mod+Control+w exec brave
 bindsym $mod+w [class="Brave-browser"] scratchpad show
 
 # terminal
-bindsym $mod+Control+t exec alacritty
-for_window [title="term_scratchpad"] floating enable, move to scratchpad, border none
-exec alacritty --title 'term_scratchpad' --option window.dimensions.columns=88 --option window.dimensions.lines=14 --command zsh -c 'tmux attach -d'
+exec --no-startup-id term_scratchpad.sh
+bindsym $mod+Control+t exec alacritty -e tmux attach
+for_window [title="term_scratchpad" class="Alacritty"] floating enable, move to scratchpad, border none
 bindsym $mod+t [title="term_scratchpad"] scratchpad show
 
 # emacs
@@ -308,7 +308,7 @@ bindsym $mod+$meta+0 scratchpad show
 bindsym $mod+Shift+0 move container to scratchpad
 
 # screen lock
-bindsym $mod+Shift+l exec "lock.sh"
+bindsym $mod+Shift+l exec lock.sh
 
 # origin windows
 assign [title="^Origin$"] Origin
