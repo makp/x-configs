@@ -57,7 +57,8 @@ bindsym $mod+d exec --no-startup-id "/home/makmiller/config-files/general/x-conf
 # kill focused window
 bindsym $mod+Shift+c kill
 
-bindsym $mod+h focus output right
+bindsym $mod+f focus output right
+bindsym $mod+b focus output right
 
 #
 set $launch_misc_apps Launch: [m]athematica [c]hrome [f]irefox
@@ -84,10 +85,10 @@ mode "$x_keys" {
 }
 
 # navigation
-bindsym $mod+b focus left
-bindsym $mod+n focus down
-bindsym $mod+p focus up
-bindsym $mod+f focus right
+bindsym $mod+h focus left
+bindsym $mod+l focus right
+bindsym $mod+j focus down
+bindsym $mod+k focus down
 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -110,14 +111,14 @@ bindsym $mod+$meta+h split h
 bindsym $mod+$meta+d split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+space fullscreen
+bindsym $mod+z fullscreen
 
 popup_during_fullscreen smart
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+l layout tabbed
-bindsym $mod+z layout toggle split
+bindsym $mod+Shift+s layout stacking
+bindsym $mod+Shift+t layout tabbed
+bindsym $mod+Shift+v layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Return floating toggle
@@ -126,7 +127,7 @@ bindsym $mod+Return floating toggle
 bindsym $mod+minus focus parent
 
 # focus the parent container
-bindsym $mod+c focus mode_toggle
+bindsym $mod+n focus mode_toggle
 
 # focus the child container
 bindsym $mod+g focus child
@@ -161,7 +162,7 @@ bindsym $mod+F1 exec "amixer sset Master toggle"
 # (0            , 0x1008ff15)
 
 bindsym $mod+Shift+n move container to output right; focus output right
-bindsym $mod+Shift+t move container to output left; focus output left
+bindsym $mod+Shift+p move container to output left; focus output left
 bindsym $mod+Shift+f move workspace to output right
 bindsym $mod+Shift+b move workspace to output left
 
