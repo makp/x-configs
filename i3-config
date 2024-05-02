@@ -290,7 +290,7 @@ bindsym $mod+w [class="Brave-browser"] scratchpad show
 # terminal
 exec --no-startup-id term_scratchpad.sh
 bindsym $mod+Control+t exec alacritty -e tmux attach
-for_window [title="term_scratchpad" class="Alacritty"] floating enable, move to scratchpad, border none
+for_window [title="term_scratchpad" class="Alacritty"] floating enable, move to scratchpad, border pixel 1  # border none
 bindsym $mod+t [title="term_scratchpad"] scratchpad show
 
 # emacs
