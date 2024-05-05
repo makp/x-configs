@@ -3,3 +3,4 @@
 
 set adjust-open width
 set selection-clipboard clipboard
+set default-bg "#ffffff"
