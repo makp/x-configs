@@ -1,11 +1,9 @@
-# Color theme
+# Select color theme
+# The color themes were installed via the AUR pkg `alacritty-themes-git`
+# See https://github.com/alacritty/alacritty-theme
 import = [
     "/usr/share/alacritty/themes/gruvbox_dark.toml"
 ]
-
-# [colors.primary]
-# background = "#303030"
-# foreground = "#d8d8d8"
 
 [font]
 size = 10.0
