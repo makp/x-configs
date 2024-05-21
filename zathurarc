@@ -1,6 +1,13 @@
 # -*-conf-*-
 # ~/.config/zathura/zathurarc
 
+# Options
 set adjust-open width
 set selection-clipboard clipboard
+
+# Appearance
 set default-bg "#ffffff"
+
+# SyncTeX
+set synctex true
+set synctex-editor-command "texlab inverse-search -i %{input} -l %{line}"
