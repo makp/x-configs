@@ -1,5 +1,5 @@
-# -*-conf-*-
-# i3 config file (v4)  /home/makmiller/.i3/config
+# ! mkdir -p ~/.config/i3
+# ! ln -s %:p ~/.config/i3/config
 
 # Helpful applications:
 # xprop: identify class and instance of a window
@@ -101,8 +101,8 @@ bindsym $mod+Control+n move down 150px
 bindsym $mod+Control+p move up 150px
 bindsym $mod+Control+f move right 150px
 
-bindsym $mod+Control+Left move left 
-bindsym $mod+Control+Down move down 
+bindsym $mod+Control+Left move left
+bindsym $mod+Control+Down move down
 bindsym $mod+Control+Up move up
 bindsym $mod+Control+Right move right
 
@@ -136,13 +136,13 @@ bindsym $mod+g focus child
 bindsym $mod+Shift+r exec i3-input -F 'rename workspace to "%s"' -P 'Novo nome: '
 
 # volume control
-bindsym XF86AudioLowerVolume exec "amixer sset Master 1%- unmute && /home/makmiller/scripts/myscripts/volume.sh" 
+bindsym XF86AudioLowerVolume exec "amixer sset Master 1%- unmute && volume.sh"
 #(0            , 0x1008ff11)
-bindsym $mod+F2 exec "amixer sset Master 1%- unmute && /home/makmiller/scripts/myscripts/volume.sh" 
+bindsym $mod+F2 exec "amixer sset Master 1%- unmute && volume.sh"
 
-bindsym XF86AudioRaiseVolume exec "amixer sset Master 1%+ unmute && /home/makmiller/scripts/myscripts/volume.sh"
+bindsym XF86AudioRaiseVolume exec "amixer sset Master 1%+ unmute && volume.sh"
 # (0            , 0x1008ff13)
-bindsym $mod+F3 exec "amixer sset Master 1%+ unmute && /home/makmiller/scripts/myscripts/volume.sh"
+bindsym $mod+F3 exec "amixer sset Master 1%+ unmute && volume.sh"
 
 bindsym XF86AudioMute exec "amixer sset Master toggle"
 # (0            , 0x1008ff12)
@@ -158,7 +158,7 @@ bindsym $mod+F1 exec "amixer sset Master toggle"
 # bindsym XF86AudioPlay exec emacsclient --eval "(emms-pause)"
 # (0            , 0x1008ff14)
 # bindsym $mod+F5 exec emacsclient --eval "(emms-pause)"
-# bindsym XF86XK_AudioStop exec 
+# bindsym XF86XK_AudioStop exec
 # (0            , 0x1008ff15)
 
 bindsym $mod+Shift+n move container to output right; focus output right
@@ -325,3 +325,5 @@ for_window [title="^Origin$"] floating enable
 exec conky
 exec xautolock -detectsleep -time 15 -locker 'lock.sh'
 exec insync start
+
+# vim: ft=i3config
