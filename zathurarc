@@ -1,5 +1,4 @@
-# -*-conf-*-
-# ~/.config/zathura/zathurarc
+# ! ln -s %:p ~/.config/zathura/zathurarc
 
 # Options
 set adjust-open width
