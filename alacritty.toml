@@ -1,3 +1,4 @@
+# Alacritty configuration file
 # !mkdir ~/.config/alacritty
 # !ln -s %:p ~/.config/alacritty/alacritty.toml
 

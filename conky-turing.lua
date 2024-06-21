@@ -1,51 +1,53 @@
+-- Conky configuration file for the Turing machine
+-- !ln -s %:p ~/.conkyrc
 conky.config = {
--- The script in myscripts is pointing to this file. No need to symlink.
-   alignment = 'top_left',
-   gap_x = 2565,
-   xftalpha = 0.8,
+	-- The script in myscripts is pointing to this file. No need to symlink.
+	alignment = "top_left",
+	gap_x = 2565,
+	xftalpha = 0.8,
 
-   -- options for preventing flickering
-   double_buffer = true,-- double-buffer extension (DBE) support -- update window fast enough
-   own_window = true,
+	-- options for preventing flickering
+	double_buffer = true, -- double-buffer extension (DBE) support -- update window fast enough
+	own_window = true,
 
-   -- font
-   use_xft = true,
-   font = 'DejaVu Sans Book:size=6',
+	-- font
+	use_xft = true,
+	font = "DejaVu Sans Book:size=6",
 
-   -- windows settings
-   own_window_type = 'override',
-   -- another possible value is "desktop"
-   own_window_transparent = true,
-   own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	-- windows settings
+	own_window_type = "override",
+	-- another possible value is "desktop"
+	own_window_transparent = true,
+	own_window_hints = "undecorated,below,sticky,skip_taskbar,skip_pager",
 
-   draw_shades = false,
-   draw_outline = false,
-   draw_borders = false,
-   stippled_borders = 1,
-   --border_margin 1
-   border_width = 1,
-   default_shade_color = 'black',
-   default_outline_color = 'black',
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	stippled_borders = 1,
+	--border_margin 1
+	border_width = 1,
+	default_shade_color = "black",
+	default_outline_color = "black",
 
-   use_spacer = 'none',
-   no_buffers = true,
-   uppercase = false,
-   update_interval = 3,-- seconds
+	use_spacer = "none",
+	no_buffers = true,
+	uppercase = false,
+	update_interval = 3, -- seconds
 
-   maximum_width = 300,-- pixels
+	maximum_width = 300, -- pixels
 
-   -- colors
-   default_color = '#BADCDD',
-   color1 = 'gray23',-- #   # net
-   color3 = '#698b22',-- ram
-   color2 = '#365411',-- cpu
-   color4 = 'darkorange4',
-   color5 = '#9F9F1A',-- yellowish
-   color6 = 'dodgerblue4',-- weather
-   -- 3b6113
+	-- colors
+	default_color = "#BADCDD",
+	color1 = "gray23", -- #   # net
+	color3 = "#698b22", -- ram
+	color2 = "#365411", -- cpu
+	color4 = "darkorange4",
+	color5 = "#9F9F1A", -- yellowish
+	color6 = "dodgerblue4", -- weather
+	-- 3b6113
 
-   color7 = 'yellow',-- system management
-};
+	color7 = "yellow", -- system management
+}
 
 conky.text = [=[
 ${color gray7}${font OpenLogos:size=28}   t  B  U  z
@@ -84,7 +86,7 @@ ${color gray7}${font OpenLogos:size=28}   t  B  U  z
      Core 4: ${cpubar cpu4 7,145} ${freq 5}MHz ${cpu cpu4}%
      Core 5: ${cpubar cpu5 7,145} ${freq 6}MHz ${cpu cpu5}%
      Core 6: ${cpubar cpu6 7,145} ${freq 7}MHz ${cpu cpu6}%
-     
+
     ${color 234010}${font StyleBats:size=14}C${font} GPU: ${nvidia modelname}
      ${nvidiabar 7,245 gpuutil} ${nvidia gpuutil}%
     Temp: ${nvidia gputemp}/${nvidia gputempthreshold} C Refresh Rate: ${execi 5 xrandr | grep -A1 DP-4 | grep -o "[[:digit:]]\+.[[:digit:]]\+\*" | grep -o "[[:digit:]]\+.[[:digit:]]\+"}Hz
@@ -99,7 +101,7 @@ ${color gray7}${font OpenLogos:size=28}   t  B  U  z
      ${fs_bar /}
 
    ${color7}${font StyleBats:size=18}o${font} Uptime: ${uptime_short} (Linux $kernel)
-       
+
      ${color white}${font Radio Space:size=16}${time %A %d %Y}
              ${font Radio Space:size=40}${time %H:%M}
-]=];
+]=]
