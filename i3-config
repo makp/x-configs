@@ -1,5 +1,5 @@
-# ! mkdir -p ~/.config/i3
-# ! ln -s %:p ~/.config/i3/config
+# !mkdir -p ~/.config/i3
+# !ln -s %:p ~/.config/i3/config
 
 # Helpful applications:
 # xprop: identify class and instance of a window
@@ -61,13 +61,12 @@ bindsym $mod+f focus output right
 bindsym $mod+b focus output right
 
 #
-set $launch_misc_apps Launch: [m]athematica [c]hrome [f]irefox
+set $launch_misc_apps Launch: [c]hrome [t]erminal
 bindsym $mod+o mode "$launch_misc_apps"
 
 mode "$launch_misc_apps" {
-    bindsym m exec mathematica, mode "default"
     bindsym c exec google-chrome-stable, mode "default"
-    bindsym f exec firefox, mode "default"
+    bindsym t exec alacritty, mode "default"
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
