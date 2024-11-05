@@ -5,7 +5,7 @@
 # Select color theme
 # The color themes were installed via the AUR pkg `alacritty-theme-git`
 # See https://github.com/alacritty/alacritty-theme
-import = [
+general.import = [
     "/usr/share/alacritty/themes/gruvbox_dark.toml"
 ]
 
