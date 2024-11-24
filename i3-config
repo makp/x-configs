@@ -87,7 +87,7 @@ mode "$x_keys" {
 bindsym $mod+h focus left
 bindsym $mod+l focus right
 bindsym $mod+j focus down
-bindsym $mod+k focus down
+bindsym $mod+k focus up
 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -95,10 +95,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Control+b move left 150px
-bindsym $mod+Control+n move down 150px
-bindsym $mod+Control+p move up 150px
-bindsym $mod+Control+f move right 150px
+bindsym $mod+Control+h move left 150px
+bindsym $mod+Control+j move down 150px
+bindsym $mod+Control+k move up 150px
+bindsym $mod+Control+l move right 150px
 
 bindsym $mod+Control+Left move left
 bindsym $mod+Control+Down move down
@@ -106,8 +106,8 @@ bindsym $mod+Control+Up move up
 bindsym $mod+Control+Right move right
 
 # splits
-bindsym $mod+$meta+h split h
-bindsym $mod+$meta+d split v
+bindsym $mod+Control+Shift+h split h
+bindsym $mod+Control+Shift+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+z fullscreen
@@ -209,10 +209,10 @@ bindsym $mod+$meta+9 move container to workspace 9
 
 
 # resize window
-bindsym $mod+$meta+b resize shrink width 100 px or 1 ppt
-bindsym $mod+$meta+n resize grow height 100 px or 1 ppt
-bindsym $mod+$meta+p resize shrink height 100 px or 1 ppt
-bindsym $mod+$meta+f resize grow width 100 px or 1 ppt
+bindsym $mod+$meta+h resize shrink width 100 px or 1 ppt
+bindsym $mod+$meta+k resize grow height 100 px or 1 ppt
+bindsym $mod+$meta+j resize shrink height 100 px or 1 ppt
+bindsym $mod+$meta+l resize grow width 100 px or 1 ppt
 
 
 # leibniz machine
