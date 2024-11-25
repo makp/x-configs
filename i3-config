@@ -281,8 +281,8 @@ bindsym $mod+Control+m exec youtube-music
 bindsym $mod+m [class="YouTube Music"] scratchpad show
 
 # Scratchpad
-bindsym $mod+0 [title="^(?!term_scratchpad)" class="^(?!Emacs)(?!Brave-browser)"] scratchpad show
-bindsym $mod+$meta+0 scratchpad show
+bindsym $mod+0 scratchpad show
+bindsym $mod+$meta+0 [title="^(?!term_scratchpad)" class="^(?!Emacs)(?!Brave-browser)"] scratchpad show
 bindsym $mod+Shift+0 move container to scratchpad
 
 # screen lock
