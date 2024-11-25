@@ -264,11 +264,11 @@ colors {
 # Set default programs
 set $term kitty
 set $browser brave
+set $browser_class Brave-browser
 
 # main browser
 bindsym $mod+Control+w exec $browser
-# bindsym $mod+w [class="Brave-browser"] scratchpad show
-bindsym $mod+w [window_role='browser'] scratchpad show
+bindsym $mod+w [class=$browser_class] scratchpad show
 
 # terminal
 exec --no-startup-id term_scratchpad.sh
