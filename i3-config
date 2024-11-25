@@ -14,9 +14,6 @@
 set $mod Mod4
 set $meta Mod1
 
-# Set default terminal emulator
-set $term kitty
-
 # Font for window titles. This font will also be used by the bar
 # unless a different font is used in the bar {} block below.
 font pango:DejaVu Sans Mono 10
@@ -33,49 +30,37 @@ set $yw     #ccdc90
 set $gn     #88b090
 set $rd     #e89393
 
-# set some nice colors      border     background  text
+# Set some nice colors      border     background  text
 client.focused              $ac        $ac         $tx
 client.unfocused            $bg        $bg         $ia
 client.focused_inactive     $bg        $bg         $ac
 client.urgent               $rd        $rd         $tx
 
-# don't focus window upon opening
+# Don't focus window upon opening
 no_focus [window_role="pop-up"]
 force_focus_wrapping yes
 
-
-# use Mouse+$mod to drag floating windows to their wanted position
+# Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# automatic back-and-forth when switching to the current workspace
+# Automatic back-and-forth when switching to the current workspace
 workspace_auto_back_and_forth yes
 bindsym $mod+v workspace back_and_forth
 
 # Move all floating windows to the scratchpad
 bindsym $mod+backslash [floating] move scratchpad
 
-# move to next workspace
+# Move to next workspace
 bindsym $mod+Tab workspace next_on_output
 bindsym $mod+r workspace next_on_output
 bindsym $mod+d exec --no-startup-id "/home/makmiller/config-files/general/x-configs/i3-new-workspace.sh"
 
-# kill focused window
+# Kill focused window
 bindsym $mod+Shift+c kill
 
 bindsym $mod+f focus output right
 bindsym $mod+b focus output right
 
-#
-set $launch_misc_apps Launch: [c]hrome [t]erminal
-bindsym $mod+o mode "$launch_misc_apps"
-
-mode "$launch_misc_apps" {
-    bindsym c exec google-chrome-stable, mode "default"
-    bindsym t exec $term, mode "default"
-
-    bindsym Escape mode "default"
-    bindsym Return mode "default"
-}
 
 set $x_keys i3WM: [e]xit re[l]oad re[s]tart
 bindsym $mod+x mode "$x_keys"
@@ -152,19 +137,8 @@ bindsym XF86AudioMute exec "amixer sset Master toggle"
 # (0            , 0x1008ff12)
 bindsym $mod+F1 exec "amixer sset Master toggle"
 
-# -- music tracks
-# bindsym XF86AudioNext exec emacsclient --eval "(emms-next)"
-# (0            , 0x1008ff17)
-# bindsym $mod+F8 exec emacsclient --eval "(emms-next)"
-# bindsym XF86AudioPrev exec emacsclient --eval "(emms-previous)"
-# (0            , 0x1008ff16)
-# bindsym $mod+F7 exec emacsclient --eval "(emms-previous)"
-# bindsym XF86AudioPlay exec emacsclient --eval "(emms-pause)"
-# (0            , 0x1008ff14)
-# bindsym $mod+F5 exec emacsclient --eval "(emms-pause)"
-# bindsym XF86XK_AudioStop exec
-# (0            , 0x1008ff15)
 
+# Move windows/containers between outputs
 bindsym $mod+Shift+n move container to output right; focus output right
 bindsym $mod+Shift+p move container to output left; focus output left
 bindsym $mod+Shift+f move workspace to output right
@@ -263,7 +237,7 @@ colors {
 
 
 
-# Office computer
+# tarski machine
 bar {
 	output DP-1
         status_command i3status --config ~/config-files/general/x-configs/i3status-office-computer.conf
@@ -287,9 +261,14 @@ colors {
 ## App keybindings
 ## ===============
 
+# Set default programs
+set $term kitty
+set $browser brave
+
 # main browser
-bindsym $mod+Control+w exec brave
-bindsym $mod+w [class="Brave-browser"] scratchpad show
+bindsym $mod+Control+w exec $browser
+# bindsym $mod+w [class="Brave-browser"] scratchpad show
+bindsym $mod+w [window_role='browser'] scratchpad show
 
 # terminal
 exec --no-startup-id term_scratchpad.sh
@@ -297,17 +276,11 @@ bindsym $mod+Control+t exec $term -e tmux attach
 for_window [title="term_scratchpad" class=$term] floating enable, move to scratchpad, border pixel 1  # border none
 bindsym $mod+t [title="term_scratchpad"] scratchpad show
 
-# emacs
-bindsym $mod+Control+e exec edit.sh
-bindsym $mod+e [class="Emacs"] scratchpad show
-# for_window [title="emacs_scratchpad"] floating enable, move to scratchpad, border 10px
-# exec edit.sh --eval '(progn (set-frame-name "emacs_scratchpad") (setq default-frame-alist (quote ((width  . 120) (height . 20)))))'
-
 # music
 bindsym $mod+Control+m exec youtube-music
 bindsym $mod+m [class="YouTube Music"] scratchpad show
 
-# scratchpad
+# Scratchpad
 bindsym $mod+0 [title="^(?!term_scratchpad)" class="^(?!Emacs)(?!Brave-browser)"] scratchpad show
 bindsym $mod+$meta+0 scratchpad show
 bindsym $mod+Shift+0 move container to scratchpad
@@ -319,6 +292,17 @@ bindsym $mod+Shift+l exec lock.sh
 assign [title="^Origin$"] Origin
 for_window [title="^Origin$"] floating enable
 
+#
+set $launch_misc_apps Launch: bro[w]ser [t]erminal
+bindsym $mod+o mode "$launch_misc_apps"
+
+mode "$launch_misc_apps" {
+    bindsym w exec google-chrome-stable, mode "default"
+    bindsym t exec $term, mode "default"
+
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
 # Refs on scratchpads:
 # https://faq.i3wm.org/question/378/start-urxvt-in-a-scratchpad.1.html
 # https://faq.i3wm.org/question/138/multiple-scratchpad.1.html
