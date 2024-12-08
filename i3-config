@@ -275,6 +275,7 @@ exec --no-startup-id create-term-scratchpad-window.sh
 bindsym $mod+Control+t exec $term -e tmux attach
 for_window [title="term_scratchpad" class=$term] floating enable, move to scratchpad, border pixel 1  # border none
 bindsym $mod+t [title="term_scratchpad"] scratchpad show
+bindsym $mod+$meta+t exec $term
 
 # music
 bindsym $mod+Control+m exec youtube-music
@@ -298,7 +299,7 @@ bindsym $mod+o mode "$launch_misc_apps"
 
 mode "$launch_misc_apps" {
     bindsym w exec google-chrome-stable, mode "default"
-    bindsym t exec $term, mode "default"
+    # bindsym t exec $term, mode "default"
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
