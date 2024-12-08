@@ -53,7 +53,7 @@ bindsym $mod+backslash [floating] move scratchpad
 # Move to next workspace
 bindsym $mod+Tab workspace next_on_output
 bindsym $mod+r workspace next_on_output
-bindsym $mod+d exec --no-startup-id "/home/makmiller/config-files/general/x-configs/i3-new-workspace.sh"
+bindsym $mod+d exec --no-startup-id "i3-new-workspace.sh"
 
 # Kill focused window
 bindsym $mod+Shift+c kill
