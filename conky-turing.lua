@@ -1,6 +1,5 @@
 -- Conky configuration file for the turing machine
 -- !ln -s %:p ~/.conkyrc
--- vim: ft=conkyrc
 
 conky.config = {
   alignment = "top_left",
