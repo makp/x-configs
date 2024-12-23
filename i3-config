@@ -194,68 +194,28 @@ bindsym $mod+$meta+j resize shrink height 100 px or 1 ppt
 bindsym $mod+$meta+l resize grow width 100 px or 1 ppt
 
 
-# leibniz machine
+# Status bar
 bar {
-	output eDP1
-        status_command i3status --config $CONFIG_FILES/x-configs/i3status-ultrabook.conf
+	output eDP1 status_command i3status --config $CONFIG_FILES/x-configs/i3status-ultrabook.conf
+	output DP-1 status_command i3status --config $CONFIG_FILES/x-configs/i3status-turing.conf
+  output HDMI-1 status_command i3status --config $CONFIG_FILES/x-configs/i3status-turing.conf
 	tray_output primary
 	i3bar_command i3bar
-        font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-        font pango:DejaVu Sans Mono 10
+  font -misc-fixed-medium-r-normal--14-120-75-75-C-70-iso10646-1
+  font pango:DejaVu Sans Mono 10
 
-colors {
-        background          $bg
-        statusline          $fg
-        separator           $hi
-        focused_workspace   $gn        $ac        $tx
-        active_workspace    $gn        $bg        $ac
-        inactive_workspace  $bg        $bg        $ia
-        urgent_workspace    $rd        $bg        $ac
-    }
-}
-
-# turing machine
-bar {
-	output DP-4
-	output HDMI-0
-        status_command i3status --config $CONFIG_FILES/x-configs/i3status-turing.conf
-	tray_output primary
-	i3bar_command i3bar
-        font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-        font pango:DejaVu Sans Mono 10
-
-colors {
-        background          $bg
-        statusline          $fg
-        separator           $hi
-        focused_workspace   $gn        $ac        $tx
-        active_workspace    $gn        $bg        $ac
-        inactive_workspace  $bg        $bg        $ia
-        urgent_workspace    $rd        $bg        $ac
-    }
+  colors {
+    background          $bg
+    statusline          $fg
+    separator           $hi
+    focused_workspace   $gn        $ac        $tx
+    active_workspace    $gn        $bg        $ac
+    inactive_workspace  $bg        $bg        $ia
+    urgent_workspace    $rd        $bg        $ac
+  }
 }
 
 
-
-# tarski machine
-bar {
-	output DP-1
-        status_command i3status --config $CONFIG_FILES/x-configs/i3status-office-computer.conf
-#	tray_output primary
-	i3bar_command i3bar
-        font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-        font pango:DejaVu Sans Mono 10
-
-colors {
-        background          $bg
-        statusline          $fg
-        separator           $hi
-        focused_workspace   $gn        $ac        $tx
-        active_workspace    $gn        $bg        $ac
-        inactive_workspace  $bg        $bg        $ia
-        urgent_workspace    $rd        $bg        $ac
-    }
-}
 
 ## ===============
 ## App keybindings
