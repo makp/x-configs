@@ -223,6 +223,7 @@ bar {
 
 # Set default programs
 set $term kitty
+set $other_term alacritty
 set $browser brave
 set $browser_class Brave-browser
 
@@ -230,10 +231,10 @@ set $browser_class Brave-browser
 bindsym $mod+Control+w exec $browser
 bindsym $mod+w [class=$browser_class] scratchpad show
 
-# terminal
+# Terminals
 exec --no-startup-id create-term-scratchpad-window.sh
-bindsym $mod+Control+t exec $term -e tmux attach
-for_window [title="term_scratchpad" class=$term] floating enable, move to scratchpad, border pixel 1  # border none
+bindsym $mod+Control+t exec $other_term -e tmux attach
+for_window [title="term_scratchpad" class=$term] floating enable, move to scratchpad, border pixel 1
 bindsym $mod+t [title="term_scratchpad"] scratchpad show
 bindsym $mod+$meta+t exec $term
 
@@ -259,7 +260,7 @@ bindsym $mod+o mode "$launch_misc_apps"
 
 mode "$launch_misc_apps" {
     bindsym w exec google-chrome-stable, mode "default"
-    # bindsym t exec $term, mode "default"
+    bindsym t exec $other_term, mode "default"
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
