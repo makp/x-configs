@@ -45,15 +45,15 @@ floating_modifier $mod
 
 # Automatic back-and-forth when switching to the current workspace
 workspace_auto_back_and_forth yes
-bindsym $mod+v workspace back_and_forth
+bindsym $mod+r workspace back_and_forth
 
-# Move all floating windows to the scratchpad
-bindsym $mod+backslash [floating] move scratchpad
+set $switch_win rofi -show window
+bindsym $mod+$meta+slash exec i3-msg workspace "$(i3-msg -t get_workspaces | jq '.[].name' | rofi -dmenu)"
+bindsym $mod+slash exec $switch_win
 
 # Move to next workspace
 bindsym $mod+Tab workspace next_on_output
-bindsym $mod+r workspace next_on_output
-bindsym $mod+d exec --no-startup-id "i3-new-workspace.sh"
+bindsym $mod+e exec --no-startup-id "i3-new-workspace.sh"
 
 # Kill focused window
 bindsym $mod+Shift+c kill
@@ -85,19 +85,19 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Control+h move left 150px
-bindsym $mod+Control+j move down 150px
-bindsym $mod+Control+k move up 150px
-bindsym $mod+Control+l move right 150px
+bindsym $mod+Shift+h move left 150px
+bindsym $mod+Shift+j move down 150px
+bindsym $mod+Shift+k move up 150px
+bindsym $mod+Shift+l move right 150px
 
-bindsym $mod+Control+Left move left
-bindsym $mod+Control+Down move down
-bindsym $mod+Control+Up move up
-bindsym $mod+Control+Right move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 
 # splits
-bindsym $mod+Control+Shift+h split h
-bindsym $mod+Control+Shift+v split v
+bindsym $mod+v split h
+bindsym $mod+s split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+z fullscreen
@@ -105,24 +105,21 @@ bindsym $mod+z fullscreen
 popup_during_fullscreen smart
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+Shift+s layout stacking
-bindsym $mod+Shift+t layout tabbed
-bindsym $mod+Shift+v layout toggle split
+bindsym $mod+$meta+b layout stacking
+bindsym $mod+$meta+t layout tabbed
+bindsym $mod+$meta+s layout toggle split
 
-# toggle tiling / floating
-bindsym $mod+Return floating toggle
 
-# change focus between tiling / floating windows
 bindsym $mod+minus focus parent
+bindsym $mod+plus focus child
 
-# focus the parent container
-bindsym $mod+n focus mode_toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+space floating toggle
 
 # focus the child container
-bindsym $mod+g focus child
 
 # rename workspace
-bindsym $mod+Shift+r exec i3-input -F 'rename workspace to "%s"' -P 'Novo nome: '
+bindsym $mod+$meta+r exec i3-input -F 'rename workspace to "%s"' -P 'Novo nome: '
 
 # volume control
 bindsym XF86AudioLowerVolume exec "amixer sset Master 1%- unmute && volume.sh"
@@ -222,23 +219,23 @@ bar {
 ## ===============
 
 # Set default programs
-set $term kitty
-set $other_term alacritty
+set $term alacritty
+set $other_term kitty
 set $browser brave
 set $browser_class Brave-browser
 
-# main browser
+# Main browser
 bindsym $mod+Control+w exec $browser
 bindsym $mod+w [class=$browser_class] scratchpad show
 
 # Terminals
 exec --no-startup-id create-term-scratchpad-window.sh
-bindsym $mod+Control+t exec $other_term -e tmux attach
+bindsym $mod+Control+t exec $term -e tmux attach
 for_window [title="term_scratchpad" class=$term] floating enable, move to scratchpad, border pixel 1
 bindsym $mod+t [title="term_scratchpad"] scratchpad show
-bindsym $mod+$meta+t exec $term
+bindsym $mod+Return exec $term
 
-# music
+# Music
 bindsym $mod+Control+m exec youtube-music
 bindsym $mod+m [class="YouTube Music"] scratchpad show
 
@@ -247,8 +244,8 @@ bindsym $mod+0 scratchpad show
 bindsym $mod+$meta+0 [title="^(?!term_scratchpad)" class="^(?!Emacs)(?!Brave-browser)"] scratchpad show
 bindsym $mod+Shift+0 move container to scratchpad
 
-# screen lock
-bindsym $mod+Shift+l exec lock_screen.sh
+# Screen lock
+bindsym $mod+Control+l exec lock_screen.sh
 
 # origin windows
 assign [title="^Origin$"] Origin
