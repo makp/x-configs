@@ -355,8 +355,8 @@ bar {
 ###
 
 # Preferred applications
-set $term kitty
-set $term_other alacritty
+set $term alacritty
+set $term_other kitty
 set $switch_win rofi -show window
 set $browser brave
 set $browser_class Brave-browser
@@ -367,7 +367,7 @@ for_window [title="term_scratchpad"] floating enable, move to scratchpad, border
 bindsym $mod+t [title="term_scratchpad"] scratchpad show
 
 # Tmux terminal
-bindsym $mod+Control+t exec $term_other -e tmux attach
+bindsym $mod+Control+t exec $term -e tmux attach
 
 # Switch windows
 bindsym $mod+slash exec $switch_win
@@ -388,7 +388,7 @@ bindsym $mod+o mode "$launch_misc_apps"
 
 mode "$launch_misc_apps" {
     bindsym w exec google-chrome-stable, mode "default"
-    bindsym t exec $term, mode "default"
+    bindsym t exec $term_other, mode "default"
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
