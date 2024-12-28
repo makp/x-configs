@@ -10,7 +10,7 @@ conky.config = {
 
 	-- font
 	use_xft = true,
-	font = "Hack Nerd Font:size=7",
+	font = "Hack Nerd Font:size=9",
 
 	-- windows settings
 	own_window_type = "override",
