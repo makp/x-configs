@@ -229,7 +229,7 @@ bindsym $mod+w [class=$browser_class] scratchpad show
 # Terminals
 exec --no-startup-id create-term-scratchpad-window.sh
 bindsym $mod+Control+t exec $term -e tmux attach
-for_window [title="term_scratchpad" class=$term] floating enable, move to scratchpad, border pixel 1
+for_window [title="term_scratchpad"] floating enable, move to scratchpad, border pixel 1
 bindsym $mod+t [title="term_scratchpad"] scratchpad show
 bindsym $mod+Return exec $term
 
