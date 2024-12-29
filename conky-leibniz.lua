@@ -1,4 +1,6 @@
 conky.config = {
+	-- out_to_x = no,
+	-- out_to_wayland = yes,
 	alignment = "top_left",
 	gap_x = 30, -- add padding to the left
 	gap_y = 30,
@@ -6,15 +8,14 @@ conky.config = {
 
 	-- options for preventing flickering
 	double_buffer = true, -- double-buffer extension (DBE) support -- update window fast enough
-	own_window = true,
 
 	-- font
 	use_xft = true,
 	font = "Hack Nerd Font:size=9",
 
 	-- windows settings
+	own_window = true,
 	own_window_type = "override",
-	-- another possible value is "desktop"
 	own_window_transparent = true,
 	own_window_hints = "undecorated,below,sticky,skip_taskbar,skip_pager",
 
