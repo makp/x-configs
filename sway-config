@@ -358,6 +358,7 @@ bar {
 set $term alacritty
 set $term_other kitty
 set $switch_win rofi -show window
+set $run_app rofi -show drun
 set $browser brave
 set $browser_class Brave-browser
 
@@ -385,6 +386,9 @@ bindsym $mod+m [class="YouTube Music"] scratchpad show
 
 set $launch_misc_apps Launch: bro[w]ser [t]erminal
 bindsym $mod+o mode "$launch_misc_apps"
+
+bindsym $mod+Control+r exec $run_app
+
 
 mode "$launch_misc_apps" {
     bindsym w exec google-chrome-stable, mode "default"
