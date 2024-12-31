@@ -259,7 +259,7 @@ bindsym $mod+v splith
 bindsym $mod+s splitv
 
 # Switch between different layout styles
-bindsym $mod+$meta+b layout stacking
+bindsym $mod+$meta+n layout stacking
 bindsym $mod+$meta+t layout tabbed
 bindsym $mod+$meta+s layout toggle split
 
