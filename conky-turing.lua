@@ -2,45 +2,45 @@
 -- !ln -s %:p ~/.conkyrc
 
 conky.config = {
-  alignment = "top_left",
-  xinerama_head = 1, -- screen number
-  gap_x = 30,        -- add padding to the left
-  gap_y = 30,
-  xftalpha = 0.8,
+	alignment = "top_left",
+	xinerama_head = 1, -- screen number
+	gap_x = 30, -- add padding to the left
+	gap_y = 30,
+	xftalpha = 0.8,
 
-  -- options for preventing flickering
-  double_buffer = true, -- double-buffer extension (DBE) support -- update window fast enough
-  own_window = true,
+	-- options for preventing flickering
+	double_buffer = true, -- double-buffer extension (DBE) support -- update window fast enough
+	own_window = true,
 
-  -- font
-  use_xft = true,
-  font = "Hack Nerd Font:size=7",
+	-- font
+	use_xft = true,
+	font = "Hack Nerd Font:size=8.5",
 
-  -- windows settings
-  own_window_type = "override",
-  -- another possible value is "desktop"
-  own_window_transparent = true,
-  own_window_hints = "undecorated,below,sticky,skip_taskbar,skip_pager",
+	-- windows settings
+	own_window_type = "override",
+	-- another possible value is "desktop"
+	own_window_transparent = true,
+	own_window_hints = "undecorated,below,sticky,skip_taskbar,skip_pager",
 
-  draw_shades = false,
-  draw_outline = false,
-  draw_borders = false,
-  stippled_borders = 1,
-  --border_margin 1
-  border_width = 1,
-  default_shade_color = "black",
-  default_outline_color = "black",
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	stippled_borders = 1,
+	--border_margin 1
+	border_width = 1,
+	default_shade_color = "black",
+	default_outline_color = "black",
 
-  use_spacer = "none",
-  no_buffers = true,
-  uppercase = false,
-  update_interval = 3, -- seconds
-  maximum_width = 300, -- pixels
+	use_spacer = "none",
+	no_buffers = true,
+	uppercase = false,
+	update_interval = 3, -- seconds
+	maximum_width = 300, -- pixels
 
-  -- colors
-  color1 = "gray23",
-  color5 = "9F9F1A",
-};
+	-- colors
+	color1 = "gray23",
+	color5 = "9F9F1A",
+}
 
 conky.text = [[
 #
@@ -116,4 +116,4 @@ ${font Hack Nerd Font:size=16} ${font}Uptime: ${uptime_short}
 #d8d8d8
 ${color bbbbba}${font Hack Nerd Font:size=14}${time %A %d, %Y}
      ${font Hack Nerd Font:size=30}${time %H:%M}
-]];
+]]
