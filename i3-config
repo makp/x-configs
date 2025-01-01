@@ -54,8 +54,9 @@ bindsym $mod+slash exec $switch_win
 bindsym $mod+Control+r exec $run_app
 
 # Move to next workspace
-bindsym $mod+Tab workspace next_on_output
-bindsym $mod+e exec --no-startup-id "i3-new-workspace.sh"
+bindsym $mod+bracketright workspace next_on_output
+bindsym $mod+bracketleft workspace prev_on_output
+bindsym $mod+n exec --no-startup-id "i3-new-workspace.sh"
 
 # Kill focused window
 bindsym $mod+Shift+c kill

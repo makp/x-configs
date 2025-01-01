@@ -185,14 +185,15 @@ bindsym $mod+plus focus child
 ###
 
 # Cycle through workspaces
-bindsym $mod+Tab workspace next_on_output
+bindsym $mod+bracketright workspace next_on_output
+bindsym $mod+bracketleft workspace prev_on_output
 
 # Back and forth between workspaces
 workspace_auto_back_and_forth yes
 bindsym $mod+r workspace back_and_forth
 
 # Create new workspace
-bindsym $mod+e exec "sway_create-new-workspace.sh"
+bindsym $mod+n exec "sway_create-new-workspace.sh"
 
 # Rename workspace
 # TODO: Use a more suitable tool for entering input than rofi
