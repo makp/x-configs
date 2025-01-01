@@ -361,6 +361,8 @@ set $switch_win rofi -show window
 set $run_app rofi -show drun
 set $browser brave
 set $browser_class Brave-browser
+set $music_player youtube-music
+set $music_player_class com.github.th_ch.youtube_music
 
 # Scratchpad terminal
 exec --no-startup-id create-term-scratchpad-window.sh
@@ -381,8 +383,8 @@ bindsym $mod+Control+w exec $browser
 bindsym $mod+w [class=$browser_class] scratchpad show
 
 # Music
-bindsym $mod+Control+m exec youtube-music
-bindsym $mod+m [class="YouTube Music"] scratchpad show
+bindsym $mod+Control+m exec $music_player
+bindsym $mod+m [class=$music_player_class] scratchpad show
 
 set $launch_misc_apps Launch: bro[w]ser [t]erminal
 bindsym $mod+o mode "$launch_misc_apps"

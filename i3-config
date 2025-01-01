@@ -223,6 +223,8 @@ set $term alacritty
 set $other_term kitty
 set $browser brave
 set $browser_class Brave-browser
+set $music_player youtube-music
+set $music_player_class com.github.th_ch.youtube_music
 
 # Main browser
 bindsym $mod+Control+w exec $browser
@@ -236,8 +238,8 @@ bindsym $mod+t [title="term_scratchpad"] scratchpad show
 bindsym $mod+Return exec $term
 
 # Music
-bindsym $mod+Control+m exec youtube-music
-bindsym $mod+m [class="YouTube Music"] scratchpad show
+bindsym $mod+Control+m exec $music_player
+bindsym $mod+m [class=$music_player_class] scratchpad show
 
 # Scratchpad
 bindsym $mod+0 scratchpad show
