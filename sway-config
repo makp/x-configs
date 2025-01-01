@@ -247,7 +247,6 @@ bindsym $mod+Shift+0 move scratchpad
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+0 scratchpad show
-bindsym $mod+$meta+0 [title="^(?!term_scratchpad)" class="^(?!Brave-browser)"] scratchpad show
 
 
 ###
@@ -368,6 +367,9 @@ set $music_player_class com.github.th_ch.youtube_music
 exec --no-startup-id create-term-scratchpad-window.sh
 for_window [title="term_scratchpad"] floating enable, move to scratchpad, border pixel 1
 bindsym $mod+t [title="term_scratchpad"] scratchpad show
+
+# Show certain windows from the scratchpad
+bindsym $mod+$meta+0 [title="^(?!term_scratchpad)" class="^(?!$music_player_class)(?!$browser_class)"] scratchpad show
 
 # Tmux terminal
 bindsym $mod+Control+t exec $term -e tmux attach

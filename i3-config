@@ -243,7 +243,7 @@ bindsym $mod+m [class=$music_player_class] scratchpad show
 
 # Scratchpad
 bindsym $mod+0 scratchpad show
-bindsym $mod+$meta+0 [title="^(?!term_scratchpad)" class="^(?!Emacs)(?!Brave-browser)"] scratchpad show
+bindsym $mod+$meta+0 [title="^(?!term_scratchpad)" class="^(?!$music_player_class)(?!$browser_class)"] scratchpad show
 bindsym $mod+Shift+0 move container to scratchpad
 
 # Screen lock
