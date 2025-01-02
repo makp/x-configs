@@ -214,7 +214,7 @@ bar {
   }
 }
 
-bindsym $mod+$meta+m bar hidden_state toggle
+bindsym $mod+$meta+b bar hidden_state toggle
 
 
 ## ===============
