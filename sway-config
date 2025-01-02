@@ -333,6 +333,7 @@ bindsym Print exec grim
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
+    mode hide
     position bottom
     status_command i3status --config $CONFIG_FILES/x-configs/i3status-$(hostname).conf
     # status_command while date +'%Y-%m-%d %X'; do sleep 1; done
@@ -349,6 +350,8 @@ bar {
       urgent_workspace    $rd        $bg        $ac
     }
 }
+
+bindsym $mod+$meta+m bar hidden_state toggle
 
 ###
 ### Utilities

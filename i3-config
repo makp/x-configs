@@ -196,6 +196,7 @@ bindsym $mod+$meta+l resize grow width 100 px or 1 ppt
 
 # Status bar
 bar {
+  mode hide
   status_command i3status --config $CONFIG_FILES/x-configs/i3status-$(hostname).conf
 	tray_output primary
 	i3bar_command i3bar
@@ -213,6 +214,7 @@ bar {
   }
 }
 
+bindsym $mod+$meta+m bar hidden_state toggle
 
 
 ## ===============
